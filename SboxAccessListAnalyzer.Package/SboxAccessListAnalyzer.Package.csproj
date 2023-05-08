@@ -10,8 +10,9 @@
   <PropertyGroup>
     <PackageId>SboxAccessListAnalyzer</PackageId>
     <PackageVersion>1.0.0.0</PackageVersion>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <Authors>peter-r-g</Authors>
-    <PackageLicenseUrl>https://github.com/peter-r-g/Sbox-AccessList-Analyzer/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <RepositoryUrl>https://github.com/peter-r-g/Sbox-AccessList-Analyzer</RepositoryUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Description>A Roslyn analyzer that checks if you are using any code that S&amp;box does not allow.</Description>
@@ -29,6 +30,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\LICENSE.md" Pack="true" PackagePath="\"/>
+    <None Include="..\\README.md" Pack="true" PackagePath="\"/>
     <None Update="tools\*.ps1" CopyToOutputDirectory="PreserveNewest" Pack="true" PackagePath="" />
   </ItemGroup>
 
