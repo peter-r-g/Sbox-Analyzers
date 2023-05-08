@@ -11,8 +11,8 @@
     <PackageId>SboxAccessListAnalyzer</PackageId>
     <PackageVersion>1.0.0.0</PackageVersion>
     <Authors>peter-r-g</Authors>
-    <PackageLicenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</PackageLicenseUrl>
-    <RepositoryUrl>http://REPOSITORY_URL_HERE_OR_DELETE_THIS_LINE</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/peter-r-g/Sbox-AccessList-Analyzer/blob/master/LICENSE.md</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/peter-r-g/Sbox-AccessList-Analyzer</RepositoryUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Description>A Roslyn analyzer that checks if you are using any code that S&amp;box does not allow.</Description>
     <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
