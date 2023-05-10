@@ -22,7 +22,7 @@ internal static class ISymbolExtensions
 		if ( AccessManager.TryGetCached( symbol, out var result ) )
 			return result;
 
-		var symbolName = symbol.ToNameString( syntax );
+		var symbolName = symbol.ToRuleString( syntax );
 		// Check it at face value first.
 		{
 			var firstCheck = symbolName;
@@ -57,7 +57,7 @@ internal static class ISymbolExtensions
 	/// <param name="syntax">The syntax that is associated with the symbols usage.</param>
 	/// <returns>A string representation of the symbol that matches the <see cref="Sandbox.Rules"/>.</returns>
 	/// <exception cref="NotImplementedException">Thrown when the type of symbol passed is not currently supported.</exception>
-	internal static string ToNameString( this ISymbol symbol, SyntaxNode syntax )
+	internal static string ToRuleString( this ISymbol symbol, SyntaxNode syntax )
 	{
 		switch ( symbol )
 		{
