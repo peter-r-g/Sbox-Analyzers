@@ -17,7 +17,7 @@ namespace SboxAnalyzers;
 public class SboxAccessListAnalyzer : DiagnosticAnalyzer
 {
 	///<inheritdoc/>
-	public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => Diagnostics.AccessList.Diagnostics;
+	public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => Diagnostics.AccessList.AllRules;
 
 	/// <summary>
 	/// A thread-safe bag containing all diagnostics that have been reported.

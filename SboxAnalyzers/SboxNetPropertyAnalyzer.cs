@@ -15,7 +15,7 @@ namespace SboxAnalyzers;
 public class SboxNetPropertyAnalyzer : DiagnosticAnalyzer
 {
 	/// <inheritdoc/>
-	public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => Diagnostics.NetProperty.Diagnostics;
+	public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => Diagnostics.NetProperty.AllRules;
 
 	/// <inheritdoc/>
 	public override void Initialize( AnalysisContext context )

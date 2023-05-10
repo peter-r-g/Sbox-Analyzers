@@ -34,7 +34,7 @@ public static class Diagnostics
 			isEnabledByDefault: true,
 			description: Description );
 
-		internal static readonly ImmutableArray<DiagnosticDescriptor> Diagnostics = ImmutableArray.Create( Rule );
+		internal static readonly ImmutableArray<DiagnosticDescriptor> AllRules = ImmutableArray.Create( Rule );
 	}
 
 	/// <summary>
@@ -160,7 +160,7 @@ public static class Diagnostics
 			isEnabledByDefault: true,
 			description: AutoPropertyDescription );
 
-		internal static readonly ImmutableArray<DiagnosticDescriptor> Diagnostics = ImmutableArray.Create(
+		internal static readonly ImmutableArray<DiagnosticDescriptor> AllRules = ImmutableArray.Create(
 			LocalRule,
 			ChangeMissingRule,
 			ChangeParameterCountRule,
