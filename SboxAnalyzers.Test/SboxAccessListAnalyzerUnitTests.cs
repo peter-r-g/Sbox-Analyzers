@@ -68,7 +68,7 @@ public class SboxAccessListAnalyzerUnitTest
 				private readonly {|#0:Assembly|} Assembly;
 			}";
 
-		var expected = VerifyCS.Diagnostic( SboxAccessListAnalyzer.DiagnosticId )
+		var expected = VerifyCS.Diagnostic( Diagnostics.AccessList.DiagnosticId )
 			.WithLocation( 0 )
 			.WithArguments( "System.Reflection.Assembly" );
 		await VerifyCS.VerifyAnalyzerAsync( test, expected );
@@ -85,7 +85,7 @@ public class SboxAccessListAnalyzerUnitTest
 				private readonly object TestObject = Assembly.GetExecutingAssembly();
 			}";
 
-		var expected = VerifyCS.Diagnostic( SboxAccessListAnalyzer.DiagnosticId )
+		var expected = VerifyCS.Diagnostic( Diagnostics.AccessList.DiagnosticId )
 			.WithLocation( 6, 42 )
 			.WithArguments( "System.Reflection.Assembly.GetExecutingAssembly()" );
 		await VerifyCS.VerifyAnalyzerAsync( test, expected );
@@ -106,7 +106,7 @@ public class SboxAccessListAnalyzerUnitTest
 				}
 			}";
 
-		var expected = VerifyCS.Diagnostic( SboxAccessListAnalyzer.DiagnosticId )
+		var expected = VerifyCS.Diagnostic( Diagnostics.AccessList.DiagnosticId )
 			.WithLocation( 9, 21 )
 			.WithArguments( "System.Type.get_BaseType()" );
 		await VerifyCS.VerifyAnalyzerAsync( test, expected );
@@ -126,7 +126,7 @@ public class SboxAccessListAnalyzerUnitTest
 				}
 			}";
 
-		var expected = VerifyCS.Diagnostic( SboxAccessListAnalyzer.DiagnosticId )
+		var expected = VerifyCS.Diagnostic( Diagnostics.AccessList.DiagnosticId )
 			.WithLocation( 8, 6 )
 			.WithArguments( "System.Environment.set_CurrentDirectory()" );
 		await VerifyCS.VerifyAnalyzerAsync( test, expected );
