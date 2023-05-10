@@ -23,11 +23,16 @@ internal static class PropertyDeclarationSyntaxExtensions
 			.FirstOrDefault();
 		var setter = syntax.AccessorList.Accessors.Where( a => a.Kind() == SyntaxKind.SetAccessorDeclaration )
 			.FirstOrDefault();
+		var initSetter = syntax.AccessorList.Accessors.Where( a => a.Kind() == SyntaxKind.InitAccessorDeclaration )
+			.FirstOrDefault();
 
 		if ( getter is not null && !getter.IsAutoImplemented() )
 			return false;
 
 		if ( setter is not null && !setter.IsAutoImplemented() )
+			return false;
+
+		if ( initSetter is not null && !initSetter.IsAutoImplemented() )
 			return false;
 
 		return true;
@@ -58,6 +63,20 @@ internal static class PropertyDeclarationSyntaxExtensions
 			return false;
 
 		return syntax.AccessorList.Accessors.Where( a => a.Kind() == SyntaxKind.SetAccessorDeclaration )
+			.FirstOrDefault() is not null;
+	}
+
+	/// <summary>
+	/// Returns whether or not a <see cref="PropertyDeclarationSyntax"/> has a init setter.
+	/// </summary>
+	/// <param name="syntax">The <see cref="PropertyDeclarationSyntax"/> to check.</param>
+	/// <returns>Whether or not a <see cref="PropertyDeclarationSyntax"/> has a init setter.</returns>
+	internal static bool HasInitSetter( this PropertyDeclarationSyntax syntax )
+	{
+		if ( syntax.AccessorList is null )
+			return false;
+
+		return syntax.AccessorList.Accessors.Where( a => a.Kind() == SyntaxKind.InitAccessorDeclaration )
 			.FirstOrDefault() is not null;
 	}
 }
