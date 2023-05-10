@@ -24,9 +24,9 @@
 
   <ItemGroup>
     <Compile Update="NetPropertyResources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="NetPropertyResources.resx" />
-    <Compile Update="Resources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="Resources.resx" />
+    <Compile Update="AccessListResources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="AccessListResources.resx" />
     <EmbeddedResource Update="NetPropertyResources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="NetPropertyResources.Designer.cs" />
-    <EmbeddedResource Update="Resources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="Resources.Designer.cs" />
+    <EmbeddedResource Update="AccessListResources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="AccessListResources.Designer.cs" />
   </ItemGroup>
 
 </Project>
