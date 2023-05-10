@@ -22,11 +22,6 @@ internal static class CSharpVerifierHelper
 		var commandLineArguments = CSharpCommandLineParser.Default.Parse( args, baseDirectory: Environment.CurrentDirectory, sdkDirectory: Environment.CurrentDirectory );
 		var nullableWarnings = commandLineArguments.CompilationOptions.SpecificDiagnosticOptions;
 
-		// Workaround for https://github.com/dotnet/roslyn/issues/41610
-		nullableWarnings = nullableWarnings
-			.SetItem( "CS8632", ReportDiagnostic.Error )
-			.SetItem( "CS8669", ReportDiagnostic.Error );
-
 		return nullableWarnings;
 	}
 }
