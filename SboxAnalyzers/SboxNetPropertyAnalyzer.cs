@@ -139,7 +139,7 @@ public class SboxNetPropertyAnalyzer : DiagnosticAnalyzer
 			context.ReportDiagnostic( Diagnostic.Create( Diagnostics.NetProperty.StaticRule, token.GetLocation() ) );
 
 		// Check if the property is not implemented as a { get; set; } auto-property.
-		if ( !syntax.IsAutoProperty() || !syntax.HasGetter() || !syntax.HasSetter() )
+		if ( !syntax.IsAutoProperty() || !syntax.HasGetter() || !syntax.HasSetter() || syntax.HasInitSetter() )
 		{
 			var diagnostic = Diagnostic.Create( Diagnostics.NetProperty.AutoPropertyRule,
 				syntax.AccessorList?.GetLocation() ?? syntax.GetLocation() );
