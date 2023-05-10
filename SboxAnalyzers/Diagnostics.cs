@@ -22,9 +22,9 @@ public static class Diagnostics
 		/// </summary>
 		private const string Category = "Code Access";
 
-		private static readonly LocalizableString Title = new LocalizableResourceString( nameof( Resources.AnalyzerTitle ), Resources.ResourceManager, typeof( Resources ) );
-		private static readonly LocalizableString MessageFormat = new LocalizableResourceString( nameof( Resources.AnalyzerMessageFormat ), Resources.ResourceManager, typeof( Resources ) );
-		private static readonly LocalizableString Description = new LocalizableResourceString( nameof( Resources.AnalyzerDescription ), Resources.ResourceManager, typeof( Resources ) );
+		private static readonly LocalizableString Title = new LocalizableResourceString( nameof( AccessListResources.AnalyzerTitle ), AccessListResources.ResourceManager, typeof( AccessListResources ) );
+		private static readonly LocalizableString MessageFormat = new LocalizableResourceString( nameof( AccessListResources.AnalyzerMessageFormat ), AccessListResources.ResourceManager, typeof( AccessListResources ) );
+		private static readonly LocalizableString Description = new LocalizableResourceString( nameof( AccessListResources.AnalyzerDescription ), AccessListResources.ResourceManager, typeof( AccessListResources ) );
 		internal static readonly DiagnosticDescriptor Rule = new(
 			DiagnosticId,
 			Title,
