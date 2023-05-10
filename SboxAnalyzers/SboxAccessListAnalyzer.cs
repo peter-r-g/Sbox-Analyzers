@@ -16,38 +16,8 @@ namespace SboxAnalyzers;
 [DiagnosticAnalyzer( LanguageNames.CSharp )]
 public class SboxAccessListAnalyzer : DiagnosticAnalyzer
 {
-	/// <summary>
-	/// The unique ID for the diagnostic message created by this analyzer.
-	/// </summary>
-	public const string DiagnosticId = "SBOXAL";
-	/// <summary>
-	/// The category that this diagnostic falls under.
-	/// </summary>
-	private const string Category = "Code Access";
-
-	/// <summary>
-	/// A localized title for the diagnostic.
-	/// </summary>
-	private static readonly LocalizableString Title = new LocalizableResourceString( nameof( Resources.AnalyzerTitle ), Resources.ResourceManager, typeof( Resources ) );
-	/// <summary>
-	/// A localized message format for the diagnostic.
-	/// </summary>
-	private static readonly LocalizableString MessageFormat = new LocalizableResourceString( nameof( Resources.AnalyzerMessageFormat ), Resources.ResourceManager, typeof( Resources ) );
-	/// <summary>
-	/// A localized description for the diagnostic.
-	/// </summary>
-	private static readonly LocalizableString Description = new LocalizableResourceString( nameof( Resources.AnalyzerDescription ), Resources.ResourceManager, typeof( Resources ) );
-	/// <summary>
-	/// The diagnostic descriptor for the analyzer.
-	/// </summary>
-	private static readonly DiagnosticDescriptor Rule = new( DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Error, isEnabledByDefault: true, description: Description );
-
 	///<inheritdoc/>
-	public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => supportedDiagnosics;
-	/// <summary>
-	/// Contains all of the diagnostics that this analyzer handles.
-	/// </summary>
-	private ImmutableArray<DiagnosticDescriptor> supportedDiagnosics = ImmutableArray.Create( Rule );
+	public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => Diagnostics.AccessList.Diagnostics;
 
 	/// <summary>
 	/// A thread-safe bag containing all diagnostics that have been reported.
@@ -140,7 +110,7 @@ public class SboxAccessListAnalyzer : DiagnosticAnalyzer
 				continue;
 
 			ReportedDiagnostics.Add( (symbolName, location) );
-			Diagnostic diagnostic = Diagnostic.Create( Rule, location, symbolName );
+			Diagnostic diagnostic = Diagnostic.Create( Diagnostics.AccessList.Rule, location, symbolName );
 			context.ReportDiagnostic( diagnostic );
 		}
 	}

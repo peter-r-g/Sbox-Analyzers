@@ -9,6 +9,35 @@ namespace SboxAnalyzers;
 public static class Diagnostics
 {
 	/// <summary>
+	/// Contains information for analyzers relating to the S&box code accesslist.
+	/// </summary>
+	public static class AccessList
+	{
+		/// <summary>
+		/// The unique ID for the diagnostic message created by this analyzer.
+		/// </summary>
+		public const string DiagnosticId = "SBOXAL";
+		/// <summary>
+		/// The category that this diagnostic falls under.
+		/// </summary>
+		private const string Category = "Code Access";
+
+		private static readonly LocalizableString Title = new LocalizableResourceString( nameof( Resources.AnalyzerTitle ), Resources.ResourceManager, typeof( Resources ) );
+		private static readonly LocalizableString MessageFormat = new LocalizableResourceString( nameof( Resources.AnalyzerMessageFormat ), Resources.ResourceManager, typeof( Resources ) );
+		private static readonly LocalizableString Description = new LocalizableResourceString( nameof( Resources.AnalyzerDescription ), Resources.ResourceManager, typeof( Resources ) );
+		internal static readonly DiagnosticDescriptor Rule = new(
+			DiagnosticId,
+			Title,
+			MessageFormat,
+			Category,
+			DiagnosticSeverity.Error,
+			isEnabledByDefault: true,
+			description: Description );
+
+		internal static readonly ImmutableArray<DiagnosticDescriptor> Diagnostics = ImmutableArray.Create( Rule );
+	}
+
+	/// <summary>
 	/// Contains information for analyzers relating to networked properties.
 	/// </summary>
 	public static class NetProperty
