@@ -3,18 +3,48 @@ using System.Collections.Immutable;
 
 namespace SboxAnalyzers;
 
+/// <summary>
+/// Contains information for all diagnostics the analyzers check.
+/// </summary>
 public static class Diagnostics
 {
+	/// <summary>
+	/// Contains information for analyzers relating to networked properties.
+	/// </summary>
 	public static class NetProperty
 	{
+		/// <summary>
+		/// A warning diagnostic to notify that the LocalAttribute is not implemented.
+		/// </summary>
 		public const string LocalDiagnosticId = "SBNP01";
+		/// <summary>
+		/// An error diagnostic to notify that the change method defined in a ChangeAttribute does not exist.
+		/// </summary>
 		public const string ChangeMissingDiagnosticId = "SBNP02";
+		/// <summary>
+		/// An error diagnostic to notify that the change method defined in a ChangeAttribute has an incorrect number of parameters.
+		/// </summary>
 		public const string ChangeParameterCountDiagnosticId = "SBNP03";
+		/// <summary>
+		/// An error diagnostic to notify that the change method defined in a ChangeAttribute has the incorrect types in its parameters.
+		/// </summary>
 		public const string ChangeParameterTypeDiagnosticId = "SBNP04";
+		/// <summary>
+		/// An error diagnostic to notify that a networked property cannot be static.
+		/// </summary>
 		public const string StaticDiagnosticId = "SBNP05";
+		/// <summary>
+		/// An error diagnostic to notify that a networked property has a non-networkable type.
+		/// </summary>
 		public const string NetworkableDiagnosticId = "SBNP06";
+		/// <summary>
+		/// An error diagnostic to notify that a networked property is not implemented as an auto-property.
+		/// </summary>
 		public const string AutoPropertyDiagnosticId = "SBNP07";
 
+		/// <summary>
+		/// The category that all of the diagnostics fit into.
+		/// </summary>
 		private const string Category = "Networking";
 
 		private static readonly LocalizableString LocalTitle = new LocalizableResourceString( nameof( NetPropertyResources.LocalTitle ), NetPropertyResources.ResourceManager, typeof( NetPropertyResources ) );

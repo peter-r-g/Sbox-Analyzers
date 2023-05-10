@@ -5,8 +5,14 @@ using System.Text;
 
 namespace SboxAnalyzers.Extensions;
 
+/// <summary>
+/// Contains extension methods for <see cref="ITypeSymbol"/>s.
+/// </summary>
 internal static class ITypeSymbolExtensions
 {
+	/// <summary>
+	/// Contains a set of all types that can be networked in S&box.
+	/// </summary>
 	internal static ImmutableHashSet<string> NetworkableTypes = ImmutableHashSet.Create(
 		typeof( sbyte ).FullName,
 		typeof( byte ).FullName,
@@ -34,11 +40,18 @@ internal static class ITypeSymbolExtensions
 		"System.Collections.Generic.IDictionary<TKey, TValue>"
 		);
 
+	/// <summary>
+	/// Returns whether or not the <see cref="ITypeSymbol"/> can be networked.
+	/// </summary>
+	/// <param name="symbol">The symbol to check if it is networkable.</param>
+	/// <returns>Whether or not the <see cref="ITypeSymbol"/> can be networked.</returns>
 	internal static bool IsNetworkable( this ITypeSymbol symbol)
 	{
+		// Fast path, enums can be networked.
 		if ( symbol.TypeKind == TypeKind.Enum )
 			return true;
 
+		// Check that if the symbol is a generic, make sure its arguments are networkable.
 		if ( symbol is INamedTypeSymbol namedTypeSymbol && namedTypeSymbol.TypeArguments.Length > 0 )
 		{
 			foreach ( var typeArgument in namedTypeSymbol.TypeArguments )
@@ -48,15 +61,18 @@ internal static class ITypeSymbolExtensions
 			}
 		}
 
+		// Fast path, check if the type string is contained in the set.
 		if ( NetworkableTypes.Contains( symbol.ToNameString( false ) ) )
 			return true;
 
+		// Check all interfaces of the type, see if one matches the set.
 		foreach ( var @interface in symbol.AllInterfaces )
 		{
 			if ( NetworkableTypes.Contains( @interface.ToNameString( false ) ) )
 				return true;
 		}
 
+		// Check classes base types, see if one matches the set.
 		if ( symbol.IsReferenceType )
 		{
 			var currentType = symbol.BaseType;
@@ -68,14 +84,22 @@ internal static class ITypeSymbolExtensions
 				currentType = currentType.BaseType;
 			}
 		}
+		// Structs can be networked if they are unmanaged.
 		else if ( symbol.IsValueType )
 			return symbol.IsUnmanagedType;
 
 		return false;
 	}
 
+	/// <summary>
+	/// Returns a type string of a <see cref="ITypeSymbol"/>.
+	/// </summary>
+	/// <param name="symbol">The symbol to stringify.</param>
+	/// <param name="useTypeArguments">Whether or not to use the constructed type arguments.</param>
+	/// <returns>A type string of a <see cref="ITypeSymbol"/>.</returns>
 	internal static string ToNameString( this ITypeSymbol symbol, bool useTypeArguments )
 	{
+		// Get namespaces.
 		var namespaces = new List<INamespaceSymbol>();
 
 		var namespaceSymbol = symbol.ContainingNamespace;
@@ -85,6 +109,7 @@ internal static class ITypeSymbolExtensions
 			namespaceSymbol = namespaceSymbol.ContainingNamespace;
 		}
 
+		// Get types.
 		var types = new List<INamedTypeSymbol>();
 
 		var typeSymbol = symbol.ContainingType;
@@ -94,9 +119,11 @@ internal static class ITypeSymbolExtensions
 			typeSymbol = typeSymbol.ContainingType;
 		}
 
+		// Reverse them to the right order.
 		namespaces.Reverse();
 		types.Reverse();
 
+		// Build string.
 		var sb = new StringBuilder();
 
 		foreach ( var @namespace in namespaces )
@@ -113,6 +140,7 @@ internal static class ITypeSymbolExtensions
 
 		sb.Append( symbol.Name );
 
+		// Include generics if applicable.
 		if ( symbol is INamedTypeSymbol namedTypeSymbol && namedTypeSymbol.IsGenericType )
 		{
 			if ( useTypeArguments && namedTypeSymbol.TypeArguments.Length > 0 )

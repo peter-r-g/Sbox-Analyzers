@@ -3,8 +3,17 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace SboxAnalyzers.Extensions;
 
+/// <summary>
+/// Contains extension methods for <see cref="TypeSyntax"/>s.
+/// </summary>
 internal static class TypeSyntaxExtensions
 {
+	/// <summary>
+	/// Returns whether or not a <see cref="TypeSyntax"/> is networkable.
+	/// </summary>
+	/// <param name="syntax">The <see cref="TypeSyntax"/> to check.</param>
+	/// <param name="semanticModel">The semantic model context around the compilation.</param>
+	/// <returns>Whether or not a <see cref="TypeSyntax"/> is networkable.</returns>
 	internal static bool IsNetworkable( this TypeSyntax syntax, SemanticModel semanticModel )
 	{
 		var symbol = semanticModel.GetSymbolInfo( syntax );
@@ -14,6 +23,13 @@ internal static class TypeSyntaxExtensions
 		return namedTypeSymbol.IsNetworkable();
 	}
 	
+	/// <summary>
+	/// Returns whether or not a <see cref="TypeSyntax"/> is equal to another <see cref="TypeSyntax"/>.
+	/// </summary>
+	/// <param name="syntax">The first syntax to compare.</param>
+	/// <param name="other">The second syntax to compare.</param>
+	/// <param name="semanticModel">The semantic model context around the compilation.</param>
+	/// <returns>Whether or not the <see cref="TypeSyntax"/>s are equal.</returns>
 	internal static bool IsEqual( this TypeSyntax syntax, TypeSyntax other, SemanticModel semanticModel )
 	{
 		var symbolInfo1 = semanticModel.GetSymbolInfo( syntax );
@@ -25,6 +41,13 @@ internal static class TypeSyntaxExtensions
 		return SymbolEqualityComparer.Default.Equals( symbol1, symbol2 );
 	}
 
+	/// <summary>
+	/// Returns a type string of a <see cref="TypeSyntax"/>.
+	/// </summary>
+	/// <param name="syntax">The syntax to stringify.</param>
+	/// <param name="useTypeArguments">Whether or not to use the constructed type arguments.</param>
+	/// <param name="semanticModel">The semantic model context around the compilation.</param>
+	/// <returns>A type string of a <see cref="TypeSyntax"/>.</returns>
 	internal static string ToNameString( this TypeSyntax syntax, bool useTypeArguments, SemanticModel semanticModel )
 	{
 		var symbol = semanticModel.GetSymbolInfo( syntax );
