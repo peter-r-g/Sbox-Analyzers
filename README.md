@@ -1,4 +1,4 @@
-# S&box AccessList Analyzer
+# S&box Analyzers
 A collection of Roslyn analyzers for analyzing code used in S&box.
 
 ## Features
