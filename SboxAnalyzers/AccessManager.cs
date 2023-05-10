@@ -33,7 +33,7 @@ internal class AccessManager
 
 	/// <summary>
 	/// An <see cref="ImmutableArray{string}"/> containing all of the assemblies that types could also be resolved from.
- 	/// </summary>
+	/// </summary>
 	internal static ImmutableArray<string> AlternateAssemblies { get; } = ImmutableArray.Create(
 		"System.Private.CoreLib", // Many C# types resolve to this assembly.
 		"System.Private.Uri" // S&box System.Uri resolves to this assembly.

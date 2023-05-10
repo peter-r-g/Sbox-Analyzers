@@ -118,7 +118,7 @@ internal static class ISymbolExtensions
 		// Build string and return.
 		var sb = new StringBuilder();
 		sb.Append( namespaces[0].Name );
-		
+
 		for ( var i = 1; i < namespaces.Count; i++ )
 		{
 			sb.Append( '.' );
