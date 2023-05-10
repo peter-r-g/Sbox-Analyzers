@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
-using VerifyCS = SboxAnalyzers.Test.CSharpAnalyzerVerifier<SboxAnalyzers.SboxAccessListAnalyzer>;
+using VerifyCS = SboxAnalyzers.Test.CSharpAnalyzerVerifier<SboxAnalyzers.AccessListAnalyzer>;
 
 namespace SboxAnalyzers.Test;
 

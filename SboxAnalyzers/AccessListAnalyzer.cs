@@ -14,7 +14,7 @@ namespace SboxAnalyzers;
 /// A Roslyn analyzer for checking a compilation for any code usage that does not conform to the S&box code access list.
 /// </summary>
 [DiagnosticAnalyzer( LanguageNames.CSharp )]
-public class SboxAccessListAnalyzer : DiagnosticAnalyzer
+public class AccessListAnalyzer : DiagnosticAnalyzer
 {
 	///<inheritdoc/>
 	public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => Diagnostics.AccessList.AllRules;
