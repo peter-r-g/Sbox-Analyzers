@@ -10,7 +10,7 @@ internal static class MemberDeclarationSyntaxExtensions
 	{
 		foreach ( var modifier in syntax.Modifiers )
 		{
-			if ( !modifier.IsKind( SyntaxKind.StaticKeyword ) )
+			if ( !modifier.IsKind( syntaxKind ) )
 				continue;
 
 			token = modifier;
