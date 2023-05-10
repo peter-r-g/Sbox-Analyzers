@@ -142,7 +142,7 @@ public class SboxAccessListAnalyzer : DiagnosticAnalyzer
 			if ( symbol.IsWhitelisted( node ) )
 				continue;
 
-			var symbolName = symbol.ToNameString( node );
+			var symbolName = symbol.ToRuleString( node );
 			var location = node.GetLocation();
 
 			// Avoid multiplying diagnostics.
