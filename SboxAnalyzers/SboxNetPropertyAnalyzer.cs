@@ -83,7 +83,7 @@ public class SboxNetPropertyAnalyzer : DiagnosticAnalyzer
 			for ( var i = 0; i < 2; i++ )
 			{
 				var parameter = parameterList.Parameters[i];
-				if ( !parameter.Type.IsEqual( syntax.Type, context ) )
+				if ( !parameter.Type.IsEqual( syntax.Type, context.SemanticModel ) )
 				{
 					var diagnostic = Diagnostic.Create( Diagnostics.NetProperty.ChangeParameterTypeRule,
 						parameter.Type.GetLocation(),
@@ -114,11 +114,11 @@ public class SboxNetPropertyAnalyzer : DiagnosticAnalyzer
 			context.ReportDiagnostic( diagnostic );
 		}
 
-		if ( !syntax.Type.IsNetworkable( context ) )
+		if ( !syntax.Type.IsNetworkable( context.SemanticModel ) )
 		{
 			var diagnostic = Diagnostic.Create( Diagnostics.NetProperty.NetworkableRule,
 				syntax.Type.GetLocation(),
-				syntax.Type.ToNameString( true, context ) );
+				syntax.Type.ToNameString( true, context.SemanticModel ) );
 			context.ReportDiagnostic( diagnostic );
 		}
 	}
