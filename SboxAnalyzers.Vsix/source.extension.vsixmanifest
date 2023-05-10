@@ -3,7 +3,7 @@
   <Metadata>
     <Identity Id="Sbox_Accesslist_Analyzer.122377cd-d262-4c8b-8c07-8d06940da963" Version="1.0" Language="en-US" Publisher="peter"/>
     <DisplayName>Sbox_Accesslist_Analyzer</DisplayName>
-    <Description xml:space="preserve">This is a sample diagnostic extension for the .NET Compiler Platform ("Roslyn").</Description>
+    <Description xml:space="preserve">A collection of Roslyn analyzers for analyzing code used in S&amp;box.</Description>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0,)" />
@@ -12,8 +12,8 @@
     <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
   </Dependencies>
   <Assets>
-    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="SboxAccessListAnalyzer" Path="|SboxAccessListAnalyzer|"/>
-    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="SboxAccessListAnalyzer" Path="|SboxAccessListAnalyzer|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="SboxAnalyzers" Path="|SboxAnalyzers|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="SboxAnalyzers" Path="|SboxAnalyzers|"/>
   </Assets>
   <Prerequisites>
     <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,)" DisplayName="Visual Studio core editor" />

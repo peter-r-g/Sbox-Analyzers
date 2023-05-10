@@ -26,7 +26,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SboxAccessListAnalyzer\SboxAccessListAnalyzer.csproj" />
+    <ProjectReference Include="..\SboxAnalyzers\SboxAnalyzers.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,7 +37,7 @@
 
   <Target Name="_AddAnalyzersToOutput">
     <ItemGroup>
-      <TfmSpecificPackageFile Include="$(OutputPath)\SboxAccessListAnalyzer.dll" PackagePath="analyzers/dotnet/cs" />
+      <TfmSpecificPackageFile Include="$(OutputPath)\SboxAnalyzers.dll" PackagePath="analyzers/dotnet/cs" />
     </ItemGroup>
   </Target>
 

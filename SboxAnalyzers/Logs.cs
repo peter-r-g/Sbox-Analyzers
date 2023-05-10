@@ -2,7 +2,7 @@
 using System.Collections.Concurrent;
 using System.IO;
 
-namespace SboxAccessListAnalyzer;
+namespace SboxAnalyzers;
 
 /// <summary>
 /// A basic logger used for debugging purposes.

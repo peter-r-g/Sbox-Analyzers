@@ -3,7 +3,7 @@ using Sandbox;
 using System.Collections.Concurrent;
 using System.Collections.Immutable;
 
-namespace SboxAccessListAnalyzer;
+namespace SboxAnalyzers;
 
 /// <summary>
 /// Encapsulates all of the required functionality to check the S&box access list.

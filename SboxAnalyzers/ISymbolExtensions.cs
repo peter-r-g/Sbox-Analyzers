@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SboxAccessListAnalyzer;
+namespace SboxAnalyzers;
 
 /// <summary>
 /// Contains extension methods for <see cref="ISymbol"/>s.

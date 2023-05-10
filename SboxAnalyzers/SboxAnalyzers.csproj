@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
-    <RootNamespace>SboxAccessListAnalyzer</RootNamespace>
+    <RootNamespace>SboxAnalyzers</RootNamespace>
     
     <IsRoslynComponent>true</IsRoslynComponent>
     <IsPackable>false</IsPackable>
