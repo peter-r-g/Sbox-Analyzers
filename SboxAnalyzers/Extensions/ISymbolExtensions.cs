@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SboxAnalyzers;
+namespace SboxAnalyzers.Extensions;
 
 /// <summary>
 /// Contains extension methods for <see cref="ISymbol"/>s.
@@ -191,23 +191,23 @@ internal static class ISymbolExtensions
 		// Single parameter.
 		if ( symbol.Parameters.Length == 1 )
 		{
-			sb.Append( GetNamespaceString( symbol.Parameters[0] ) );
+			sb.Append( symbol.Parameters[0] .GetNamespaceString( ) );
 			sb.Append( '.' );
-			sb.Append( GetTypeString( symbol.Parameters[0] ) );
+			sb.Append( symbol.Parameters[0] .GetTypeString( ) );
 		}
 		// Multiple parameters.
 		else
 		{
-			sb.Append( GetNamespaceString( symbol.Parameters[0] ) );
+			sb.Append( symbol.Parameters[0] .GetNamespaceString( ) );
 			sb.Append( '.' );
-			sb.Append( GetTypeString( symbol.Parameters[0] ) );
+			sb.Append( symbol.Parameters[0] .GetTypeString( ) );
 
 			for ( var i = 1; i < symbol.Parameters.Length; i++ )
 			{
 				sb.Append( ", " );
-				sb.Append( GetNamespaceString( symbol.Parameters[i] ) );
+				sb.Append( symbol.Parameters[i] .GetNamespaceString( ) );
 				sb.Append( '.' );
-				sb.Append( GetTypeString( symbol.Parameters[i] ) );
+				sb.Append( symbol.Parameters[i] .GetTypeString( ) );
 			}
 		}
 

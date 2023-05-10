@@ -2,6 +2,7 @@
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
+using SboxAnalyzers.Extensions;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Immutable;
