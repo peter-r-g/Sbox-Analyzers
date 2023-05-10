@@ -1,0 +1,24 @@
+# This workflow will format a .NET project.
+
+name: .NET Format
+
+on:
+  push:
+    paths:
+      - "**.cs"
+      - ".editorconfig"
+
+jobs:
+  check-format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 3.1.x
+      - name: Install dotnet-format tool
+        run: dotnet tool install -g dotnet-format
+      - name: Run dotnet format
+        run: dotnet format '.\' --folder --check --verbosity diagnostic
