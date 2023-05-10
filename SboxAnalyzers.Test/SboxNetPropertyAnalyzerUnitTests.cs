@@ -21,11 +21,12 @@ public class SboxNetPropertyAnalyzerUnitTest
 			public class Test
 			{
 				[Net] public int Test1 {|#0:{ get; }|}
-				[Net] public int Test2
+				[Net] public int Test3
 				{|#1:{
 					get => backingField;
 					set => backingField = value;
 				}|}
+				//[Net] public int Test2 {|#2:{ get; init; }|}
 
 				private int backingField;
 			}";
@@ -34,7 +35,13 @@ public class SboxNetPropertyAnalyzerUnitTest
 			.WithLocation( 0 );
 		var expected2 = VerifyCS.Diagnostic( Diagnostics.NetProperty.AutoPropertyDiagnosticId )
 			.WithLocation( 1 );
-		await VerifyCS.VerifyAnalyzerAsync( test, expected1, expected2 );
+		// FIXME
+		/*var initExpected = VerifyCS.Diagnostic( "CS0518" )
+			.WithSpan( 12, 35, 12, 39 )
+			.WithArguments( "System.Runtime.CompilerServices.IsExternalInit" );
+		var expected3 = VerifyCS.Diagnostic( Diagnostics.NetProperty.AutoPropertyDiagnosticId )
+			.WithLocation( 2 );*/
+		await VerifyCS.VerifyAnalyzerAsync( test, expected1, expected2/*, expected3 */ );
 	}
 
 	[TestMethod]
