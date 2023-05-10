@@ -55,7 +55,7 @@ internal class AccessManager
 	/// <summary>
 	/// A thread-safe dictionary containing a cache of all checked symbols and their whitelist result.
 	/// </summary>
-	private static ConcurrentDictionary<ISymbol, bool> WhitelistCache { get; } = new ConcurrentDictionary<ISymbol, bool>();
+	private static ConcurrentDictionary<ISymbol, bool> WhitelistCache { get; } = new ConcurrentDictionary<ISymbol, bool>( SymbolEqualityComparer.Default );
 
 	/// <summary>
 	/// Returns whether or not the string passed is contained in the whitelist.
