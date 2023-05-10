@@ -60,7 +60,6 @@ public class SboxAccessListAnalyzer : DiagnosticAnalyzer
 		context.EnableConcurrentExecution();
 
 		context.RegisterCompilationStartAction( OnCompileStart );
-		context.RegisterSemanticModelAction( AnalyzeSemantics );
 	}
 
 	/// <summary>
@@ -69,7 +68,7 @@ public class SboxAccessListAnalyzer : DiagnosticAnalyzer
 	/// <param name="context">The context around the new compilation.</param>
 	private static void OnCompileStart( CompilationStartAnalysisContext context )
 	{
-		context.RegisterCompilationEndAction( OnCompileFinish );
+		context.RegisterSemanticModelAction( AnalyzeSemantics );
 
 		// Clear any old diagnostics from a previous compile.
 		while ( !ReportedDiagnostics.IsEmpty )
@@ -82,16 +81,6 @@ public class SboxAccessListAnalyzer : DiagnosticAnalyzer
 			AccessManager.Config = "menu";
 		else
 			AccessManager.Config = "unknown";
-	}
-
-	/// <summary>
-	/// Invoked when a compile is finishing.
-	/// </summary>
-	/// <param name="context">The context around the compilation.</param>
-	private static void OnCompileFinish( CompilationAnalysisContext context )
-	{
-		if ( Logs.Enabled )
-			Logs.Flush( context.Compilation.AssemblyName );
 	}
 
 	/// <summary>
@@ -148,9 +137,6 @@ public class SboxAccessListAnalyzer : DiagnosticAnalyzer
 			// Avoid multiplying diagnostics.
 			if ( HasBeenReported( symbolName, location ) )
 				continue;
-
-			if ( Logs.Enabled )
-				Logs.Add( $"{symbol} - {node} ({node.GetLocation()})" );
 
 			ReportedDiagnostics.Add( (symbolName, location) );
 			Diagnostic diagnostic = Diagnostic.Create( Rule, location, symbolName );
