@@ -16,7 +16,7 @@ public static class Diagnostics
 		/// <summary>
 		/// The unique ID for the diagnostic message created by this analyzer.
 		/// </summary>
-		public const string DiagnosticId = "SBOXAL";
+		public const string DiagnosticId = "SB9001";
 		/// <summary>
 		/// The category that this diagnostic falls under.
 		/// </summary>
@@ -45,31 +45,31 @@ public static class Diagnostics
 		/// <summary>
 		/// A warning diagnostic to notify that the LocalAttribute is not implemented.
 		/// </summary>
-		public const string LocalDiagnosticId = "SBNP01";
+		public const string LocalDiagnosticId = "SB9002";
 		/// <summary>
 		/// An error diagnostic to notify that the change method defined in a ChangeAttribute does not exist.
 		/// </summary>
-		public const string ChangeMissingDiagnosticId = "SBNP02";
+		public const string ChangeMissingDiagnosticId = "SB9003";
 		/// <summary>
 		/// An error diagnostic to notify that the change method defined in a ChangeAttribute has an incorrect number of parameters.
 		/// </summary>
-		public const string ChangeParameterCountDiagnosticId = "SBNP03";
+		public const string ChangeParameterCountDiagnosticId = "SB9004";
 		/// <summary>
 		/// An error diagnostic to notify that the change method defined in a ChangeAttribute has the incorrect types in its parameters.
 		/// </summary>
-		public const string ChangeParameterTypeDiagnosticId = "SBNP04";
+		public const string ChangeParameterTypeDiagnosticId = "SB9005";
 		/// <summary>
 		/// An error diagnostic to notify that a networked property cannot be static.
 		/// </summary>
-		public const string StaticDiagnosticId = "SBNP05";
+		public const string StaticDiagnosticId = "SB9006";
 		/// <summary>
 		/// An error diagnostic to notify that a networked property has a non-networkable type.
 		/// </summary>
-		public const string NetworkableDiagnosticId = "SBNP06";
+		public const string NetworkableDiagnosticId = "SB9007";
 		/// <summary>
 		/// An error diagnostic to notify that a networked property is not implemented as an auto-property.
 		/// </summary>
-		public const string AutoPropertyDiagnosticId = "SBNP07";
+		public const string AutoPropertyDiagnosticId = "SB9008";
 
 		/// <summary>
 		/// The category that all of the diagnostics fit into.
