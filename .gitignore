@@ -392,6 +392,3 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 .idea/
-
-# Custom
-SboxAnalyzers/*.Designer.cs
