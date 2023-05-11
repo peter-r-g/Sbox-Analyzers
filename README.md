@@ -17,7 +17,7 @@ A collection of Roslyn analyzers for analyzing code used in S&box.
 ![Networked property showcase](https://github.com/peter-r-g/Sbox-Analyzers/assets/11802285/c532d157-a5fa-4659-831d-570c2543f5be)
 
 ## Installation
-You can get the analyzer on [NuGet](https://www.nuget.org/packages/SboxAnalyzers) and [GitHub](https://github.com/peter-r-g/Sbox-Analyzers/releases).
+You can get the analyzer on [NuGet](https://www.nuget.org/packages/SboxAnalyzers), [GitHub](https://github.com/peter-r-g/Sbox-Analyzers/releases), and [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=PeterGorman.SboxAnalyzers).
 
 If installing through NuGet, you can add the following to your csproj file:
 ```csproj
