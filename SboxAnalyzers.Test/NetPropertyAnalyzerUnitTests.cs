@@ -31,9 +31,9 @@ public class NetPropertyAnalyzerUnitTest
 				private int backingField;
 			}";
 
-		var expected1 = VerifyCS.Diagnostic( Diagnostics.NetProperty.AutoPropertyDiagnosticId )
+		var expected1 = VerifyCS.Diagnostic( Diagnostics.NetProperty.NotAutoPropertyId )
 			.WithLocation( 0 );
-		var expected2 = VerifyCS.Diagnostic( Diagnostics.NetProperty.AutoPropertyDiagnosticId )
+		var expected2 = VerifyCS.Diagnostic( Diagnostics.NetProperty.NotAutoPropertyId )
 			.WithLocation( 1 );
 		// FIXME
 		/*var initExpected = VerifyCS.Diagnostic( "CS0518" )
@@ -79,10 +79,10 @@ public class NetPropertyAnalyzerUnitTest
 				}
 			}";
 
-		var expected1 = VerifyCS.Diagnostic( Diagnostics.NetProperty.ChangeParameterCountDiagnosticId )
+		var expected1 = VerifyCS.Diagnostic( Diagnostics.NetProperty.ChangeMethodParameterCountMismatchId )
 			.WithLocation( 0 )
 			.WithArguments( 0 );
-		var expected2 = VerifyCS.Diagnostic( Diagnostics.NetProperty.ChangeParameterCountDiagnosticId )
+		var expected2 = VerifyCS.Diagnostic( Diagnostics.NetProperty.ChangeMethodParameterCountMismatchId )
 			.WithLocation( 1 )
 			.WithArguments( 1 );
 		await VerifyCS.VerifyAnalyzerAsync( test, expected1, expected2 );
@@ -118,7 +118,7 @@ public class NetPropertyAnalyzerUnitTest
 				}
 			}";
 
-		var expected = VerifyCS.Diagnostic( Diagnostics.NetProperty.ChangeParameterTypeDiagnosticId )
+		var expected = VerifyCS.Diagnostic( Diagnostics.NetProperty.ChangeMethodParameterTypeMismatchId )
 			.WithLocation( 0 )
 			.WithArguments( "short" );
 		await VerifyCS.VerifyAnalyzerAsync( test, expected );
@@ -151,10 +151,10 @@ public class NetPropertyAnalyzerUnitTest
 				[{|#1:Change( ""OnSomeObjectChanged"" )|}] public object Test2 { get; set; }
 			}";
 
-		var expected1 = VerifyCS.Diagnostic( Diagnostics.NetProperty.ChangeMissingDiagnosticId )
+		var expected1 = VerifyCS.Diagnostic( Diagnostics.NetProperty.ChangeMethodMissingId )
 			.WithLocation( 0 )
 			.WithArguments( "OnTest1Changed" );
-		var expected2 = VerifyCS.Diagnostic( Diagnostics.NetProperty.ChangeMissingDiagnosticId )
+		var expected2 = VerifyCS.Diagnostic( Diagnostics.NetProperty.ChangeMethodMissingId )
 			.WithLocation( 1 )
 			.WithArguments( "OnSomeObjectChanged" );
 		await VerifyCS.VerifyAnalyzerAsync( test, expected1, expected2 );
@@ -176,7 +176,7 @@ public class NetPropertyAnalyzerUnitTest
 				[Net] public {|#0:static|} int Test1 { get; set; }
 			}";
 
-		var expected = VerifyCS.Diagnostic( Diagnostics.NetProperty.StaticDiagnosticId )
+		var expected = VerifyCS.Diagnostic( Diagnostics.NetProperty.IsStaticId )
 			.WithLocation( 0 );
 		await VerifyCS.VerifyAnalyzerAsync( test, expected );
 	}
@@ -204,7 +204,7 @@ public class NetPropertyAnalyzerUnitTest
 				[Net] public {|#0:IList<object>|} Test1 { get; set; }
 			}";
 
-		var expected = VerifyCS.Diagnostic( Diagnostics.NetProperty.NetworkableDiagnosticId )
+		var expected = VerifyCS.Diagnostic( Diagnostics.NetProperty.NotNetworkableId )
 			.WithLocation( 0 )
 			.WithArguments( "System.Collections.Generic.IList<System.Object>" );
 		await VerifyCS.VerifyAnalyzerAsync( test, expected );
@@ -233,10 +233,10 @@ public class NetPropertyAnalyzerUnitTest
 				[Net] public {|#1:UnNetworkableType|} Test2 { get; set; }
 			}";
 
-		var expected1 = VerifyCS.Diagnostic( Diagnostics.NetProperty.NetworkableDiagnosticId )
+		var expected1 = VerifyCS.Diagnostic( Diagnostics.NetProperty.NotNetworkableId )
 			.WithLocation( 0 )
 			.WithArguments( "System.Object" );
-		var expected2 = VerifyCS.Diagnostic( Diagnostics.NetProperty.NetworkableDiagnosticId )
+		var expected2 = VerifyCS.Diagnostic( Diagnostics.NetProperty.NotNetworkableId )
 			.WithLocation( 1 )
 			.WithArguments( "UnNetworkableType" );
 		await VerifyCS.VerifyAnalyzerAsync( test, expected1, expected2 );
@@ -361,7 +361,7 @@ public class NetPropertyAnalyzerUnitTest
 				[{|#0:Local|}] public object TestObject { get; set; }
 			}";
 
-		var expected = VerifyCS.Diagnostic( Diagnostics.NetProperty.LocalDiagnosticId )
+		var expected = VerifyCS.Diagnostic( Diagnostics.NetProperty.LocalAttributeUsageId )
 			.WithLocation( 0 );
 		await VerifyCS.VerifyAnalyzerAsync( test, expected );
 	}

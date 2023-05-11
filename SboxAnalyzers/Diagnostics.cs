@@ -16,7 +16,7 @@ public static class Diagnostics
 		/// <summary>
 		/// The unique ID for the diagnostic message created by this analyzer.
 		/// </summary>
-		public const string DiagnosticId = "SB9001";
+		public const string Id = "SB9001";
 		/// <summary>
 		/// The category that this diagnostic falls under.
 		/// </summary>
@@ -26,7 +26,7 @@ public static class Diagnostics
 		private static readonly LocalizableString MessageFormat = new LocalizableResourceString( nameof( AccessListResources.AnalyzerMessageFormat ), AccessListResources.ResourceManager, typeof( AccessListResources ) );
 		private static readonly LocalizableString Description = new LocalizableResourceString( nameof( AccessListResources.AnalyzerDescription ), AccessListResources.ResourceManager, typeof( AccessListResources ) );
 		internal static readonly DiagnosticDescriptor Rule = new(
-			DiagnosticId,
+			Id,
 			Title,
 			MessageFormat,
 			Category,
@@ -45,31 +45,31 @@ public static class Diagnostics
 		/// <summary>
 		/// A warning diagnostic to notify that the LocalAttribute is not implemented.
 		/// </summary>
-		public const string LocalDiagnosticId = "SB9002";
+		public const string LocalAttributeUsageId = "SB9002";
 		/// <summary>
 		/// An error diagnostic to notify that the change method defined in a ChangeAttribute does not exist.
 		/// </summary>
-		public const string ChangeMissingDiagnosticId = "SB9003";
+		public const string ChangeMethodMissingId = "SB9003";
 		/// <summary>
 		/// An error diagnostic to notify that the change method defined in a ChangeAttribute has an incorrect number of parameters.
 		/// </summary>
-		public const string ChangeParameterCountDiagnosticId = "SB9004";
+		public const string ChangeMethodParameterCountMismatchId = "SB9004";
 		/// <summary>
 		/// An error diagnostic to notify that the change method defined in a ChangeAttribute has the incorrect types in its parameters.
 		/// </summary>
-		public const string ChangeParameterTypeDiagnosticId = "SB9005";
+		public const string ChangeMethodParameterTypeMismatchId = "SB9005";
 		/// <summary>
 		/// An error diagnostic to notify that a networked property cannot be static.
 		/// </summary>
-		public const string StaticDiagnosticId = "SB9006";
+		public const string IsStaticId = "SB9006";
 		/// <summary>
 		/// An error diagnostic to notify that a networked property has a non-networkable type.
 		/// </summary>
-		public const string NetworkableDiagnosticId = "SB9007";
+		public const string NotNetworkableId = "SB9007";
 		/// <summary>
 		/// An error diagnostic to notify that a networked property is not implemented as an auto-property.
 		/// </summary>
-		public const string AutoPropertyDiagnosticId = "SB9008";
+		public const string NotAutoPropertyId = "SB9008";
 
 		/// <summary>
 		/// The category that all of the diagnostics fit into.
@@ -80,7 +80,7 @@ public static class Diagnostics
 		private static readonly LocalizableString LocalMessageFormat = new LocalizableResourceString( nameof( NetPropertyResources.LocalMessageFormat ), NetPropertyResources.ResourceManager, typeof( NetPropertyResources ) );
 		private static readonly LocalizableString LocalDescription = new LocalizableResourceString( nameof( NetPropertyResources.LocalDescription ), NetPropertyResources.ResourceManager, typeof( NetPropertyResources ) );
 		internal static readonly DiagnosticDescriptor LocalRule = new(
-			LocalDiagnosticId,
+			LocalAttributeUsageId,
 			LocalTitle,
 			LocalMessageFormat,
 			Category,
@@ -92,7 +92,7 @@ public static class Diagnostics
 		private static readonly LocalizableString ChangeMissingMessageFormat = new LocalizableResourceString( nameof( NetPropertyResources.ChangeMissingMessageFormat ), NetPropertyResources.ResourceManager, typeof( NetPropertyResources ) );
 		private static readonly LocalizableString ChangeMissingDescription = new LocalizableResourceString( nameof( NetPropertyResources.ChangeMissingDescription ), NetPropertyResources.ResourceManager, typeof( NetPropertyResources ) );
 		internal static readonly DiagnosticDescriptor ChangeMissingRule = new(
-			ChangeMissingDiagnosticId,
+			ChangeMethodMissingId,
 			ChangeMissingTitle,
 			ChangeMissingMessageFormat,
 			Category,
@@ -104,7 +104,7 @@ public static class Diagnostics
 		private static readonly LocalizableString ChangeParameterCountMessageFormat = new LocalizableResourceString( nameof( NetPropertyResources.ChangeParameterCountMessageFormat ), NetPropertyResources.ResourceManager, typeof( NetPropertyResources ) );
 		private static readonly LocalizableString ChangeParameterCountDescription = new LocalizableResourceString( nameof( NetPropertyResources.ChangeParameterCountDescription ), NetPropertyResources.ResourceManager, typeof( NetPropertyResources ) );
 		internal static readonly DiagnosticDescriptor ChangeParameterCountRule = new(
-			ChangeParameterCountDiagnosticId,
+			ChangeMethodParameterCountMismatchId,
 			ChangeParameterCountTitle,
 			ChangeParameterCountMessageFormat,
 			Category,
@@ -116,7 +116,7 @@ public static class Diagnostics
 		private static readonly LocalizableString ChangeParameterTypeMessageFormat = new LocalizableResourceString( nameof( NetPropertyResources.ChangeParameterTypeMessageFormat ), NetPropertyResources.ResourceManager, typeof( NetPropertyResources ) );
 		private static readonly LocalizableString ChangeParameterTypeDescription = new LocalizableResourceString( nameof( NetPropertyResources.ChangeParameterTypeDescription ), NetPropertyResources.ResourceManager, typeof( NetPropertyResources ) );
 		internal static readonly DiagnosticDescriptor ChangeParameterTypeRule = new(
-			ChangeParameterTypeDiagnosticId,
+			ChangeMethodParameterTypeMismatchId,
 			ChangeParameterTypeTitle,
 			ChangeParameterTypeMessageFormat,
 			Category,
@@ -128,7 +128,7 @@ public static class Diagnostics
 		private static readonly LocalizableString StaticMessageFormat = new LocalizableResourceString( nameof( NetPropertyResources.StaticMessageFormat ), NetPropertyResources.ResourceManager, typeof( NetPropertyResources ) );
 		private static readonly LocalizableString StaticDescription = new LocalizableResourceString( nameof( NetPropertyResources.StaticDescription ), NetPropertyResources.ResourceManager, typeof( NetPropertyResources ) );
 		internal static readonly DiagnosticDescriptor StaticRule = new(
-			StaticDiagnosticId,
+			IsStaticId,
 			StaticTitle,
 			StaticMessageFormat,
 			Category,
@@ -140,7 +140,7 @@ public static class Diagnostics
 		private static readonly LocalizableString NetworkableMessageFormat = new LocalizableResourceString( nameof( NetPropertyResources.NetworkableMessageFormat ), NetPropertyResources.ResourceManager, typeof( NetPropertyResources ) );
 		private static readonly LocalizableString NetworkableDescription = new LocalizableResourceString( nameof( NetPropertyResources.NetworkableDescription ), NetPropertyResources.ResourceManager, typeof( NetPropertyResources ) );
 		internal static readonly DiagnosticDescriptor NetworkableRule = new(
-			NetworkableDiagnosticId,
+			NotNetworkableId,
 			NetworkableTitle,
 			NetworkableMessageFormat,
 			Category,
@@ -152,7 +152,7 @@ public static class Diagnostics
 		private static readonly LocalizableString AutoPropertyMessageFormat = new LocalizableResourceString( nameof( NetPropertyResources.AutoPropertyMessageFormat ), NetPropertyResources.ResourceManager, typeof( NetPropertyResources ) );
 		private static readonly LocalizableString AutoPropertyDescription = new LocalizableResourceString( nameof( NetPropertyResources.AutoPropertyDescription ), NetPropertyResources.ResourceManager, typeof( NetPropertyResources ) );
 		internal static readonly DiagnosticDescriptor AutoPropertyRule = new(
-			AutoPropertyDiagnosticId,
+			NotAutoPropertyId,
 			AutoPropertyTitle,
 			AutoPropertyMessageFormat,
 			Category,
