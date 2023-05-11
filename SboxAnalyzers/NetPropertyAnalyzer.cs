@@ -12,7 +12,7 @@ namespace SboxAnalyzers;
 /// A Roslyn analyzer for checking networked properties.
 /// </summary>
 [DiagnosticAnalyzer( LanguageNames.CSharp )]
-public class SboxNetPropertyAnalyzer : DiagnosticAnalyzer
+public class NetPropertyAnalyzer : DiagnosticAnalyzer
 {
 	/// <inheritdoc/>
 	public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => Diagnostics.NetProperty.AllRules;
@@ -67,11 +67,16 @@ public class SboxNetPropertyAnalyzer : DiagnosticAnalyzer
 		{
 			var customChangeMethod = context.SemanticModel.GetConstantValue( customChangeMethodExpression );
 			if ( customChangeMethod.HasValue )
-				changeMethod = (string)customChangeMethod.Value;
+			{
+				if ( customChangeMethod.Value is string customChangeMethodName )
+					changeMethod = customChangeMethodName;
+			}
 		}
 
 		// Check the containing type for the change callback method.
-		var containingType = (TypeDeclarationSyntax)syntax.Parent;
+		if ( syntax.Parent is not TypeDeclarationSyntax containingType )
+			return;
+
 		var containsChangeMethod = false;
 		foreach ( var method in containingType.Members.OfType<MethodDeclarationSyntax>() )
 		{
@@ -106,12 +111,15 @@ public class SboxNetPropertyAnalyzer : DiagnosticAnalyzer
 			// Check that the parameter types are correct.
 			for ( var i = 0; i < 2; i++ )
 			{
-				var parameter = parameterList.Parameters[i];
-				if ( !parameter.Type.IsEqual( syntax.Type, context.SemanticModel ) )
+				var parameterType = parameterList.Parameters[i].Type;
+				if ( parameterType is null )
+					continue;
+
+				if ( !parameterType.IsEqual( syntax.Type, context.SemanticModel ) )
 				{
 					var diagnostic = Diagnostic.Create( Diagnostics.NetProperty.ChangeParameterTypeRule,
-						parameter.Type.GetLocation(),
-						parameter.Type.ToString() );
+						parameterType.GetLocation(),
+						parameterType.ToString() );
 					context.ReportDiagnostic( diagnostic );
 				}
 			}
