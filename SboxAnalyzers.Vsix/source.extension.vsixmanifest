@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="Sbox_Accesslist_Analyzer.122377cd-d262-4c8b-8c07-8d06940da963" Version="1.0" Language="en-US" Publisher="peter"/>
-    <DisplayName>Sbox_Accesslist_Analyzer</DisplayName>
+    <Identity Id="SboxAnalyzers.122377cd-d262-4c8b-8c07-8d06940da963" Version="2.0" Language="en-US" Publisher="peter"/>
+    <DisplayName>S&amp;box Analyzers</DisplayName>
     <Description xml:space="preserve">A collection of Roslyn analyzers for analyzing code used in S&amp;box.</Description>
   </Metadata>
   <Installation>
