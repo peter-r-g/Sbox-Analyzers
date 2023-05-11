@@ -14,7 +14,7 @@ A collection of Roslyn analyzers for analyzing code used in S&box.
   * SB9006: Error for having the static keyword on a networked property.
   * SB9007: Error for having a non-networkable type on a networked property.
   * SB9008: Error for having a networked property that is not auto-implemented ({ get; set; }).
-![Networked property showcase](https://github.com/peter-r-g/Sbox-Analyzers/assets/11802285/c532d157-a5fa-4659-831d-570c2543f5be)
+![Networked property showcase](https://github-production-user-asset-6210df.s3.amazonaws.com/11802285/237562812-c532d157-a5fa-4659-831d-570c2543f5be.gif)
 
 ## Installation
 You can get the analyzer on [NuGet](https://www.nuget.org/packages/SboxAnalyzers), [GitHub](https://github.com/peter-r-g/Sbox-Analyzers/releases), and [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=PeterGorman.SboxAnalyzers).
