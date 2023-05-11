@@ -5,7 +5,7 @@ A collection of Roslyn analyzers for analyzing code used in S&box.
 
 * SB9001: Code accesslist checking.
   * S&box uses a code accesslist system, the analyzer can check your code to make sure you are not using anything that would breach it.
-![Code accesslist showcase](https://user-images.githubusercontent.com/11802285/236940698-d990d019-7d09-4df8-9c4c-39bf5a24e7ff.gif)
+![Code accesslist showcase](https://i.imgur.com/XQNLxuc.gif)
 * SB9002-SB9008 Networked property analyzing.
   * SB9002: Warning of `LocalAttribute`s lack of implementation ([#2169](https://github.com/sboxgame/issues/issues/2169))
   * SB9003: Error for not implementing the change method callback defined in a `ChangeAttribute`.
@@ -14,7 +14,7 @@ A collection of Roslyn analyzers for analyzing code used in S&box.
   * SB9006: Error for having the static keyword on a networked property.
   * SB9007: Error for having a non-networkable type on a networked property.
   * SB9008: Error for having a networked property that is not auto-implemented ({ get; set; }).
-![Networked property showcase](https://github-production-user-asset-6210df.s3.amazonaws.com/11802285/237562812-c532d157-a5fa-4659-831d-570c2543f5be.gif)
+![Networked property showcase](https://i.imgur.com/3rWs9p4.gif)
 
 ## Installation
 You can get the analyzer on [NuGet](https://www.nuget.org/packages/SboxAnalyzers), [GitHub](https://github.com/peter-r-g/Sbox-Analyzers/releases), and [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=PeterGorman.SboxAnalyzers).
