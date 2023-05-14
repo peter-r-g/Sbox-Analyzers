@@ -38,6 +38,70 @@ public static class Diagnostics
 	}
 
 	/// <summary>
+	/// Contains information for analyzers relating to event method arguments.
+	/// </summary>
+	public static class MethodArguments
+	{
+		/// <summary>
+		/// An error diagnostic to notify that an event listeners parameter count is incorrect.
+		/// </summary>
+		public const string ListenerParameterCountMismatchId = "SB9009";
+		/// <summary>
+		/// An error diagnostic to notify that an event listeners parameter type is incorrect.
+		/// </summary>
+		public const string ListenerParameterTypeMismatchId = "SB9010";
+		/// <summary>
+		/// A warning diagnostic to notify that an event listener has parameters but the event has no MethodArgumentsAttribute to compare against.
+		/// </summary>
+		public const string ListenerMethodArgumentsUndefinedId = "SB9011";
+		/// <summary>
+		/// The category that this diagnostic falls under.
+		/// </summary>
+		private const string Category = "Events";
+
+		private static readonly LocalizableString ListenerParameterCountMismatchTitle = new LocalizableResourceString( nameof( MethodArgumentsResources.ListenerParameterCountMismatchTitle ), MethodArgumentsResources.ResourceManager, typeof( MethodArgumentsResources ) );
+		private static readonly LocalizableString ListenerParameterCountMismatchMessageFormat = new LocalizableResourceString( nameof( MethodArgumentsResources.ListenerParameterCountMismatchMessageFormat ), MethodArgumentsResources.ResourceManager, typeof( MethodArgumentsResources ) );
+		private static readonly LocalizableString ListenerParameterCountMismatchDescription = new LocalizableResourceString( nameof( MethodArgumentsResources.ListenerParameterCountMismatchDescription ), MethodArgumentsResources.ResourceManager, typeof( MethodArgumentsResources ) );
+		public static readonly DiagnosticDescriptor ListenerParameterCountMismatchRule = new(
+			ListenerParameterCountMismatchId,
+			ListenerParameterCountMismatchTitle,
+			ListenerParameterCountMismatchMessageFormat,
+			Category,
+			DiagnosticSeverity.Error,
+			isEnabledByDefault: true,
+			description: ListenerParameterCountMismatchDescription );
+
+		private static readonly LocalizableString ListenerParameterTypeMismatchTitle = new LocalizableResourceString( nameof( MethodArgumentsResources.ListenerParameterTypeMismatchTitle ), MethodArgumentsResources.ResourceManager, typeof( MethodArgumentsResources ) );
+		private static readonly LocalizableString ListenerParameterTypeMismatchMessageFormat = new LocalizableResourceString( nameof( MethodArgumentsResources.ListenerParameterTypeMismatchMessageFormat ), MethodArgumentsResources.ResourceManager, typeof( MethodArgumentsResources ) );
+		private static readonly LocalizableString ListenerParameterTypeMismatchDescription = new LocalizableResourceString( nameof( MethodArgumentsResources.ListenerParameterTypeMismatchDescription ), MethodArgumentsResources.ResourceManager, typeof( MethodArgumentsResources ) );
+		public static readonly DiagnosticDescriptor ListenerParameterTypeMismatchRule = new(
+			ListenerParameterTypeMismatchId,
+			ListenerParameterTypeMismatchTitle,
+			ListenerParameterTypeMismatchMessageFormat,
+			Category,
+			DiagnosticSeverity.Error,
+			isEnabledByDefault: true,
+			description: ListenerParameterTypeMismatchDescription );
+
+		private static readonly LocalizableString ListenerMethodArgumentsUndefinedTitle = new LocalizableResourceString( nameof( MethodArgumentsResources.ListenerMethodArgumentsUndefinedTitle ), MethodArgumentsResources.ResourceManager, typeof( MethodArgumentsResources ) );
+		private static readonly LocalizableString ListenerMethodArgumentsUndefinedMessageFormat = new LocalizableResourceString( nameof( MethodArgumentsResources.ListenerMethodArgumentsUndefinedMessageFormat ), MethodArgumentsResources.ResourceManager, typeof( MethodArgumentsResources ) );
+		private static readonly LocalizableString ListenerMethodArgumentsUndefinedDescription = new LocalizableResourceString( nameof( MethodArgumentsResources.ListenerMethodArgumentsUndefinedDescription ), MethodArgumentsResources.ResourceManager, typeof( MethodArgumentsResources ) );
+		public static readonly DiagnosticDescriptor ListenerMethodArgumentsUndefinedRule = new(
+			ListenerMethodArgumentsUndefinedId,
+			ListenerMethodArgumentsUndefinedTitle,
+			ListenerMethodArgumentsUndefinedMessageFormat,
+			Category,
+			DiagnosticSeverity.Warning,
+			isEnabledByDefault: true,
+			description: ListenerMethodArgumentsUndefinedDescription );
+
+		internal static readonly ImmutableArray<DiagnosticDescriptor> AllRules = ImmutableArray.Create(
+			ListenerParameterCountMismatchRule,
+			ListenerParameterTypeMismatchRule,
+			ListenerMethodArgumentsUndefinedRule );
+	}
+
+	/// <summary>
 	/// Contains information for analyzers relating to networked properties.
 	/// </summary>
 	public static class NetProperty
