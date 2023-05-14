@@ -1,6 +1,7 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Collections.Generic;
 
 namespace SboxAnalyzers.Extensions;
 
@@ -69,5 +70,45 @@ internal static class MemberDeclarationSyntaxExtensions
 
 		token = default;
 		return false;
+	}
+
+	/// <summary>
+	/// Returns a set of attributes on the <see cref="MemberDeclarationSyntax"/> that is assignable to the <see ref="attributeName"/>.
+	/// </summary>
+	/// <param name="syntax">The member to get attributes from.</param>
+	/// <param name="attributeName">The name of the attribute to find. This includes attributes derivatives.</param>
+	/// <param name="semanticModel">The semantic model that encapsulates the compilation.</param>
+	/// <returns>A set of attributes on the <see cref="MemberDeclarationSyntax"/> that is assignable to the <see ref="attributeName"/>.</returns>
+	internal static IEnumerable<AttributeSyntax> GetAttributesOfType( this MemberDeclarationSyntax syntax, string attributeName, SemanticModel semanticModel )
+	{
+		foreach ( var attributeList in syntax.AttributeLists )
+		{
+			foreach ( var attribute in attributeList.Attributes )
+			{
+				// Both "Local" and "LocalAttribute" are valid, need to check both cases.
+				if ( attribute.Name.ToString() == attributeName || attribute.Name.ToString() == attributeName + "Attribute" )
+				{
+					yield return attribute;
+					break;
+				}
+
+				if ( semanticModel.GetSymbolInfo( attribute ).Symbol is not IMethodSymbol attributeConstructorSymbol )
+					continue;
+
+				var attributeSymbol = attributeConstructorSymbol.ContainingType;
+				while ( attributeSymbol is not null )
+				{
+					// Both "Local" and "LocalAttribute" are valid, need to check both cases.
+					if ( attributeSymbol.Name.ToString() != attributeName && attributeSymbol.Name.ToString() != attributeName + "Attribute" )
+					{
+						attributeSymbol = attributeSymbol.BaseType;
+						continue;
+					}
+					
+					yield return attribute;
+					break;
+				}
+			}
+		}
 	}
 }
