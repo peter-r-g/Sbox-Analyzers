@@ -22,7 +22,22 @@ internal static class TypeSyntaxExtensions
 
 		return namedTypeSymbol.IsNetworkable();
 	}
-	
+
+	/// <summary>
+	/// Returns whether or not a <see cref="TypeSyntax"/> is supported in server commands.
+	/// </summary>
+	/// <param name="syntax">The <see cref="TypeSyntax"/> to check.</param>
+	/// <param name="semanticModel">The semantic model context around the compilation.</param>
+	/// <returns>Whether or not a <see cref="TypeSyntax"/> is supported in server commands.</returns>
+	internal static bool IsServerCommandSupported( this TypeSyntax syntax, SemanticModel semanticModel )
+	{
+		var symbol = semanticModel.GetSymbolInfo( syntax );
+		if ( symbol.Symbol is not INamedTypeSymbol namedTypeSymbol )
+			return false;
+
+		return namedTypeSymbol.IsServerCommandSupported();
+	}
+
 	/// <summary>
 	/// Returns whether or not a <see cref="TypeSyntax"/> is equal to another <see cref="TypeSyntax"/>.
 	/// </summary>
