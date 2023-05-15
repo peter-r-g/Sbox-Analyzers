@@ -36,7 +36,7 @@ public class ServerCmdAnalyzer : DiagnosticAnalyzer
 		if ( methodDeclaration.ParameterList is null )
 			return;
 
-		if ( !methodDeclaration.HasAttribute( "ConCmd.Server" ) )
+		if ( !methodDeclaration.HasAttribute( Constants.ServerCommandAttribute ) )
 			return;
 
 		// Check that all parameters are networkable in server commands.

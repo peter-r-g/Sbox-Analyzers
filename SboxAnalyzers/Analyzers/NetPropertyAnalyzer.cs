@@ -46,7 +46,7 @@ public class NetPropertyAnalyzer : DiagnosticAnalyzer
 	/// <param name="syntax">The <see cref="PropertyDeclarationSyntax"/> to check.</param>
 	private static void CheckLocalAttribute( in SyntaxNodeAnalysisContext context, PropertyDeclarationSyntax syntax )
 	{
-		if ( syntax.TryGetAttribute( "Local", out var localAttribute ) )
+		if ( syntax.TryGetAttribute( Constants.LocalAttribute, out var localAttribute ) )
 			context.ReportDiagnostic( Diagnostic.Create( Diagnostics.NetProperty.LocalRule, localAttribute!.GetLocation() ) );
 	}
 
@@ -57,7 +57,7 @@ public class NetPropertyAnalyzer : DiagnosticAnalyzer
 	/// <param name="syntax">The <see cref="PropertyDeclarationSyntax"/> to check.</param>
 	private static void CheckChangeAttribute( in SyntaxNodeAnalysisContext context, PropertyDeclarationSyntax syntax )
 	{
-		if ( !syntax.TryGetAttribute( "Change", out var changeAttribute ) )
+		if ( !syntax.TryGetAttribute( Constants.ChangeAttribute, out var changeAttribute ) )
 			return;
 
 		// Get the name for the change callback method.
@@ -139,7 +139,7 @@ public class NetPropertyAnalyzer : DiagnosticAnalyzer
 	/// <param name="syntax">The <see cref="PropertyDeclarationSyntax"/> to check.</param>
 	private static void CheckNetAttribute( in SyntaxNodeAnalysisContext context, PropertyDeclarationSyntax syntax )
 	{
-		if ( !syntax.HasAttribute( "Net" ) )
+		if ( !syntax.HasAttribute( Constants.NetAttribute ) )
 			return;
 
 		// Check if the property is declared as static.
