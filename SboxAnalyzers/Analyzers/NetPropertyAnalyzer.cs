@@ -6,7 +6,7 @@ using SboxAnalyzers.Extensions;
 using System.Collections.Immutable;
 using System.Linq;
 
-namespace SboxAnalyzers;
+namespace SboxAnalyzers.Analyzers;
 
 /// <summary>
 /// A Roslyn analyzer for checking networked properties.

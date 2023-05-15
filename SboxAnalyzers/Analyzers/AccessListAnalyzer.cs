@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.IO;
 
-namespace SboxAnalyzers;
+namespace SboxAnalyzers.Analyzers;
 
 /// <summary>
 /// A Roslyn analyzer for checking a compilation for any code usage that does not conform to the S&box code access list.

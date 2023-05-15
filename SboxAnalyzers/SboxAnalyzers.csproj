@@ -33,8 +33,4 @@
     <EmbeddedResource Update="Resources\ServerCmdResources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="ServerCmdResources.Designer.cs" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Analyzers\" />
-  </ItemGroup>
-
 </Project>
