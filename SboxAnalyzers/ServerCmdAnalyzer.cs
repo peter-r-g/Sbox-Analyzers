@@ -36,6 +36,9 @@ public class ServerCmdAnalyzer : DiagnosticAnalyzer
 		if ( methodDeclaration.ParameterList is null )
 			return;
 
+		if ( !methodDeclaration.HasAttribute( "ConCmd.Server" ) )
+			return;
+
 		// Check that all parameters are networkable in server commands.
 		foreach ( var parameter in methodDeclaration.ParameterList.Parameters )
 		{
