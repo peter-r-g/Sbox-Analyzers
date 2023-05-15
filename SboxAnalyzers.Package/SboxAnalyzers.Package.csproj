@@ -9,7 +9,7 @@
 
   <PropertyGroup>
     <PackageId>SboxAnalyzers</PackageId>
-    <PackageVersion>2.0.0.0</PackageVersion>
+    <PackageVersion>3.0.0.0</PackageVersion>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Authors>peter-r-g</Authors>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>

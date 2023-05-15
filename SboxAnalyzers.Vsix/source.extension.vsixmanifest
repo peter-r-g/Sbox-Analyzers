@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="SboxAnalyzers.122377cd-d262-4c8b-8c07-8d06940da963" Version="2.0" Language="en-US" Publisher="Peter Gorman"/>
+    <Identity Id="SboxAnalyzers.122377cd-d262-4c8b-8c07-8d06940da963" Version="3.0" Language="en-US" Publisher="Peter Gorman"/>
     <DisplayName>S&amp;box Analyzers</DisplayName>
     <Description xml:space="preserve">A collection of Roslyn analyzers for analyzing code used in S&amp;box.</Description>
     <Tags>s&amp;box;sbox;source;source2;roslyn;analyzer</Tags>
