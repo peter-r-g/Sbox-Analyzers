@@ -61,191 +61,29 @@ namespace SboxAnalyzers {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Networked properties must be implemented as an auto property for them to function. Init setters do not count..
+        ///   Looks up a localized string similar to Not all types can be used in S&amp;box server commands. See https://wiki.facepunch.com/sbox/Commands#parametertypes for currently usable types..
         /// </summary>
-        internal static string AutoPropertyDescription {
+        internal static string UnsupportedDescription {
             get {
-                return ResourceManager.GetString("AutoPropertyDescription", resourceCulture);
+                return ResourceManager.GetString("UnsupportedDescription", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Networked properties must be implemented as an auto property { get; set; }.
+        ///   Looks up a localized string similar to The type &apos;{0}&apos; is not supported for server commands.
         /// </summary>
-        internal static string AutoPropertyMessageFormat {
+        internal static string UnsupportedMessageFormat {
             get {
-                return ResourceManager.GetString("AutoPropertyMessageFormat", resourceCulture);
+                return ResourceManager.GetString("UnsupportedMessageFormat", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Networked properties must be auto-implemented { get; set; }.
+        ///   Looks up a localized string similar to The type is not supported for server commands.
         /// </summary>
-        internal static string AutoPropertyTitle {
+        internal static string UnsupportedTitle {
             get {
-                return ResourceManager.GetString("AutoPropertyTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The change callback method must exist on the type as the name is defined or defaulted to. If default, it will look for &quot;On[PropertyName]Changed&quot;..
-        /// </summary>
-        internal static string ChangeMissingDescription {
-            get {
-                return ResourceManager.GetString("ChangeMissingDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The change callback method &apos;{0}&apos; does not exist.
-        /// </summary>
-        internal static string ChangeMissingMessageFormat {
-            get {
-                return ResourceManager.GetString("ChangeMissingMessageFormat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Change callback method is missing.
-        /// </summary>
-        internal static string ChangeMissingTitle {
-            get {
-                return ResourceManager.GetString("ChangeMissingTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The change callback must have two parameters. The first containing the old value; the second containing the new value..
-        /// </summary>
-        internal static string ChangeParameterCountDescription {
-            get {
-                return ResourceManager.GetString("ChangeParameterCountDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The change callback needs two parameters, not {0}.
-        /// </summary>
-        internal static string ChangeParameterCountMessageFormat {
-            get {
-                return ResourceManager.GetString("ChangeParameterCountMessageFormat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Change callback parameter count mismatch.
-        /// </summary>
-        internal static string ChangeParameterCountTitle {
-            get {
-                return ResourceManager.GetString("ChangeParameterCountTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The change callback method must have the parameter types be the same as the properties type..
-        /// </summary>
-        internal static string ChangeParameterTypeDescription {
-            get {
-                return ResourceManager.GetString("ChangeParameterTypeDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The change callback parameter type must be &apos;{0}&apos;.
-        /// </summary>
-        internal static string ChangeParameterTypeMessageFormat {
-            get {
-                return ResourceManager.GetString("ChangeParameterTypeMessageFormat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Change callback parameter type mismatch.
-        /// </summary>
-        internal static string ChangeParameterTypeTitle {
-            get {
-                return ResourceManager.GetString("ChangeParameterTypeTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The local attribute is currently not implemented. See issue #2169 for updates..
-        /// </summary>
-        internal static string LocalDescription {
-            get {
-                return ResourceManager.GetString("LocalDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The local attribute is not implemented.
-        /// </summary>
-        internal static string LocalMessageFormat {
-            get {
-                return ResourceManager.GetString("LocalMessageFormat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Local attribute is not implemented.
-        /// </summary>
-        internal static string LocalTitle {
-            get {
-                return ResourceManager.GetString("LocalTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Not all types can be networked in S&amp;box. See https://wiki.facepunch.com/sbox/Networked_Types for currently networkable types..
-        /// </summary>
-        internal static string NetworkableDescription {
-            get {
-                return ResourceManager.GetString("NetworkableDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The type &apos;{0}&apos; is not networkable.
-        /// </summary>
-        internal static string NetworkableMessageFormat {
-            get {
-                return ResourceManager.GetString("NetworkableMessageFormat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The type is not networkable.
-        /// </summary>
-        internal static string NetworkableTitle {
-            get {
-                return ResourceManager.GetString("NetworkableTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Static properties cannot be networked..
-        /// </summary>
-        internal static string StaticDescription {
-            get {
-                return ResourceManager.GetString("StaticDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Static properties cannot be networked.
-        /// </summary>
-        internal static string StaticMessageFormat {
-            get {
-                return ResourceManager.GetString("StaticMessageFormat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Static properties cannot be networked.
-        /// </summary>
-        internal static string StaticTitle {
-            get {
-                return ResourceManager.GetString("StaticTitle", resourceCulture);
+                return ResourceManager.GetString("UnsupportedTitle", resourceCulture);
             }
         }
     }

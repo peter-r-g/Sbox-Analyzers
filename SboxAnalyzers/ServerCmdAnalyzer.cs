@@ -45,7 +45,7 @@ public class ServerCmdAnalyzer : DiagnosticAnalyzer
 			if ( parameter.Type.IsServerCommandSupported( context.SemanticModel ) )
 				continue;
 
-			var diagnostic = Diagnostic.Create( Diagnostics.ServerCmd.NetworkableRule,
+			var diagnostic = Diagnostic.Create( Diagnostics.ServerCmd.UnsupportedRule,
 				parameter.Type.GetLocation(),
 				parameter.Type.ToNameString( true, context.SemanticModel ) );
 			context.ReportDiagnostic( diagnostic );
