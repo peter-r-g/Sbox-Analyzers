@@ -1,6 +1,6 @@
-# This workflow will build a .NET project
+# This workflow will build and test a .NET project
 
-name: .NET
+name: .NET Test
 
 on:
   push:
@@ -14,7 +14,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
