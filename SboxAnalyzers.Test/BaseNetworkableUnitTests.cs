@@ -26,4 +26,19 @@ public class BaseNetworkableAnalyzerUnitTests
 			.WithLocation( 0 );
 		await VerifyCS.VerifyAnalyzerAsync( test, expected );
 	}
+
+	[TestMethod]
+	public async Task Pass_NoConstructors()
+	{
+		var test = @"
+			public class BaseNetworkable
+			{
+			}
+
+			public class Entity : BaseNetworkable
+			{
+			}";
+
+		await VerifyCS.VerifyAnalyzerAsync( test );
+	}
 }
