@@ -15,6 +15,12 @@ A collection of Roslyn analyzers for analyzing code used in S&box.
   * SB9007: Error for having a non-networkable type on a networked property.
   * SB9008: Error for having a networked property that is not auto-implemented ({ get; set; }).
 ![Networked property showcase](https://i.imgur.com/3rWs9p4.gif)
+* SB9009-SB9011 Event listener analysis.
+  * SB9009: Error for having an incorrect event listener parameter count.
+  * SB9010: Error for having an incorrect event listener parameter type.
+  * SB9011: Warning for using an event that has parameters with no `MethodArgumentsAttribute`.
+* SB9012: Server command parameter type is unsupported.
+* SB9013: BaseNetworkable derived type has no parameterless constructor.
 
 ## Installation
 You can get the analyzer on [NuGet](https://www.nuget.org/packages/SboxAnalyzers), [GitHub](https://github.com/peter-r-g/Sbox-Analyzers/releases), and [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=PeterGorman.SboxAnalyzers).
