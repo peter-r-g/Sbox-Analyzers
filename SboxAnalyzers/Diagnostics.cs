@@ -39,6 +39,36 @@ public static class Diagnostics
 	}
 
 	/// <summary>
+	/// Contains information for analyzers relating to BaseNetworkable types.
+	/// </summary>
+	public static class BaseNetworkables
+	{
+		/// <summary>
+		/// An error diagnostic to notify that a BaseNetworkable type has no parameterless constructor.
+		/// </summary>
+		public const string NoParameterlessConstructorId = "SB9013";
+		/// <summary>
+		/// The category that this diagnostic falls under.
+		/// </summary>
+		private const string Category = "BaseNetworkables";
+
+		private static readonly LocalizableString NoParameterlessConstructorTitle = new LocalizableResourceString( nameof( BaseNetworkablesResources.NoParameterlessConstructorTitle ), BaseNetworkablesResources.ResourceManager, typeof( BaseNetworkablesResources ) );
+		private static readonly LocalizableString NoParameterlessConstructorMessageFormat = new LocalizableResourceString( nameof( BaseNetworkablesResources.NoParameterlessConstructorMessageFormat ), BaseNetworkablesResources.ResourceManager, typeof( BaseNetworkablesResources ) );
+		private static readonly LocalizableString NoParameterlessConstructorDescription = new LocalizableResourceString( nameof( BaseNetworkablesResources.NoParameterlessConstructorDescription ), BaseNetworkablesResources.ResourceManager, typeof( BaseNetworkablesResources ) );
+		public static readonly DiagnosticDescriptor NoParameterlessConstructorRule = new(
+			NoParameterlessConstructorId,
+			NoParameterlessConstructorTitle,
+			NoParameterlessConstructorMessageFormat,
+			Category,
+			DiagnosticSeverity.Error,
+			isEnabledByDefault: true,
+			description: NoParameterlessConstructorDescription );
+
+		internal static readonly ImmutableArray<DiagnosticDescriptor> AllRules = ImmutableArray.Create(
+			NoParameterlessConstructorRule );
+	}
+
+	/// <summary>
 	/// Contains information for analyzers relating to event method arguments.
 	/// </summary>
 	public static class MethodArguments
