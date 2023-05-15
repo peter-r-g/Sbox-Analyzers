@@ -4,6 +4,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 using SboxAnalyzers.Extensions;
 using System.Collections.Immutable;
+using System.Diagnostics;
 using System.Linq;
 
 namespace SboxAnalyzers.Analyzers;
@@ -75,6 +76,9 @@ public class MethodArgumentsAnalyzer : DiagnosticAnalyzer
 			// Check each parameter for type match.
 			for ( var i = 0; i < typeArguments.Length; i++ )
 			{
+				if ( i >= methodParameters.Value.Count )
+					break;
+
 				var argument = typeArguments[i];
 				if ( argument.Value is not ITypeSymbol argumentSymbol )
 					continue;
@@ -83,7 +87,7 @@ public class MethodArgumentsAnalyzer : DiagnosticAnalyzer
 				if ( parameter.Type is null )
 					continue;
 
-				var parameterSymbol = context.SemanticModel.GetSymbolInfo( parameter ).Symbol;
+				var parameterSymbol = context.SemanticModel.GetSymbolInfo( parameter.Type ).Symbol;
 				if ( SymbolEqualityComparer.Default.Equals( parameterSymbol, argumentSymbol ) )
 					continue;
 
