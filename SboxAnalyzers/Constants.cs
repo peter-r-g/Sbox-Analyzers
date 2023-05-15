@@ -59,6 +59,11 @@ internal static class Constants
 		);
 
 	/// <summary>
+	/// The name of the type that is a BaseNetworkable.
+	/// </summary>
+	internal const string BaseNetworkableType = "BaseNetworkable";
+
+	/// <summary>
 	/// The name of an attribute that is used to decorate net properties.
 	/// </summary>
 	internal const string ChangeAttribute = "Change";
