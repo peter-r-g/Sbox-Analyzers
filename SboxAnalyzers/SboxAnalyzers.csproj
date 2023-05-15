@@ -26,9 +26,11 @@
     <Compile Update="AccessListResources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="AccessListResources.resx" />
     <Compile Update="MethodArgumentsResources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="MethodArgumentsResources.resx" />
     <Compile Update="NetPropertyResources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="NetPropertyResources.resx" />
+    <Compile Update="ServerCmd.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="ServerCmd.resx" />
     <EmbeddedResource Update="AccessListResources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="AccessListResources.Designer.cs" />
     <EmbeddedResource Update="MethodArgumentsResources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="MethodArgumentsResources.Designer.cs" />
     <EmbeddedResource Update="NetPropertyResources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="NetPropertyResources.Designer.cs" />
+    <EmbeddedResource Update="ServerCmd.resx" Generator="ResXFileCodeGenerator" LastGenOutput="ServerCmd.Designer.cs" />
   </ItemGroup>
 
 </Project>
