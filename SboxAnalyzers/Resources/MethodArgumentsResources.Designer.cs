@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SboxAnalyzers {
+namespace SboxAnalyzers.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace SboxAnalyzers {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SboxAnalyzers.MethodArgumentsResources", typeof(MethodArgumentsResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SboxAnalyzers.Resources.MethodArgumentsResources", typeof(MethodArgumentsResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

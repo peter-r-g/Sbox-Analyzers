@@ -1,11 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
-using VerifyCS = SboxAnalyzers.Test.CSharpAnalyzerVerifier<SboxAnalyzers.ServerCmdAnalyzer>;
+using VerifyCS = SboxAnalyzers.Test.CSharpAnalyzerVerifier<SboxAnalyzers.Analyzers.ServerCmdAnalyzer>;
 
 namespace SboxAnalyzers.Test;
 
 [TestClass]
-public class ServerCmdAnalyzerUnitTest
+public class ServerCmdAnalyzerUnitTests
 {
 	[TestMethod]
 	public async Task Error_ServerCommandParameter()

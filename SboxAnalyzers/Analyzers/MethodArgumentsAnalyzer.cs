@@ -6,7 +6,7 @@ using SboxAnalyzers.Extensions;
 using System.Collections.Immutable;
 using System.Linq;
 
-namespace SboxAnalyzers;
+namespace SboxAnalyzers.Analyzers;
 
 /// <summary>
 /// A Roslyn analyzer for checking event method arguments.
@@ -36,11 +36,11 @@ public class MethodArgumentsAnalyzer : DiagnosticAnalyzer
 		var methodParameters = methodDeclaration.ParameterList?.Parameters;
 
 		// Get all event attributes on the method.
-		foreach ( var eventAttribute in methodDeclaration.GetAttributesOfType( "Event", context.SemanticModel ) )
+		foreach ( var eventAttribute in methodDeclaration.GetAttributesOfType( Constants.EventAttribute, context.SemanticModel ) )
 		{
 			var eventTypeSymbol = context.SemanticModel.GetSymbolInfo( eventAttribute ).Symbol!.ContainingType;
 			var methodArgumentsAttribute = eventTypeSymbol.GetAttributes()
-				.FirstOrDefault( a => a.AttributeClass?.Name == "MethodArgumentsAttribute" );
+				.FirstOrDefault( a => a.AttributeClass?.Name == Constants.MethodArgumentsAttribute + "Attribute" );
 
 			if ( methodArgumentsAttribute is null )
 			{

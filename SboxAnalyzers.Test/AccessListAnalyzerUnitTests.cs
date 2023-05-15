@@ -1,11 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
-using VerifyCS = SboxAnalyzers.Test.CSharpAnalyzerVerifier<SboxAnalyzers.AccessListAnalyzer>;
+using VerifyCS = SboxAnalyzers.Test.CSharpAnalyzerVerifier<SboxAnalyzers.Analyzers.AccessListAnalyzer>;
 
 namespace SboxAnalyzers.Test;
 
 [TestClass]
-public class AccessListAnalyzerUnitTest
+public class AccessListAnalyzerUnitTests
 {
 	[TestMethod]
 	public async Task WhitelistNamespace()

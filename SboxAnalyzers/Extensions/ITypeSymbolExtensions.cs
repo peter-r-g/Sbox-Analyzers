@@ -11,57 +11,6 @@ namespace SboxAnalyzers.Extensions;
 internal static class ITypeSymbolExtensions
 {
 	/// <summary>
-	/// Contains a set of all types that can be networked in S&box.
-	/// </summary>
-	internal static ImmutableHashSet<string> NetworkableTypes = ImmutableHashSet.Create(
-		typeof( sbyte ).FullName,
-		typeof( byte ).FullName,
-		typeof( short ).FullName,
-		typeof( ushort ).FullName,
-		typeof( int ).FullName,
-		typeof( uint ).FullName,
-		typeof( long ).FullName,
-		typeof( ulong ).FullName,
-		typeof( float ).FullName,
-		typeof( double ).FullName,
-		typeof( bool ).FullName,
-		typeof( string ).FullName,
-		"Sandbox.Vector2",
-		"Sandbox.Vector3",
-		"Sandbox.Rotation",
-		"Sandbox.Angles",
-		"Sandbox.Transform",
-		"Sandbox.BaseNetworkable",
-		"Sandbox.Entity",
-		"Sandbox.Material",
-		"Sandbox.Model",
-		"Sandbox.GameResource",
-		"System.Collections.Generic.IList<T>",
-		"System.Collections.Generic.IDictionary<TKey, TValue>"
-		);
-
-	/// <summary>
-	/// Contains a set of all types that are supported for server commands in S&box.
-	/// </summary>
-	internal static ImmutableHashSet<string> ServerCommandSupportedTypes = ImmutableHashSet.Create(
-		typeof( int ).FullName,
-		typeof( uint ).FullName,
-		typeof( long ).FullName,
-		typeof( ulong ).FullName,
-		typeof( float ).FullName,
-		typeof( double ).FullName,
-		typeof( bool ).FullName,
-		typeof( string ).FullName,
-		"Sandbox.Vector2",
-		"Sandbox.Vector3",
-		"Sandbox.Vector4",
-		"Sandbox.Rotation",
-		"Sandbox.Angles",
-		"Sandbox.Color",
-		"Sandbox.RangedFloat"
-		);
-
-	/// <summary>
 	/// Returns whether or not the <see cref="ITypeSymbol"/> can be networked.
 	/// </summary>
 	/// <param name="symbol">The symbol to check if it is networkable.</param>
@@ -83,13 +32,13 @@ internal static class ITypeSymbolExtensions
 		}
 
 		// Fast path, check if the type string is contained in the set.
-		if ( NetworkableTypes.Contains( symbol.ToNameString( false ) ) )
+		if ( Constants.NetworkableTypes.Contains( symbol.ToNameString( false ) ) )
 			return true;
 
 		// Check all interfaces of the type, see if one matches the set.
 		foreach ( var @interface in symbol.AllInterfaces )
 		{
-			if ( NetworkableTypes.Contains( @interface.ToNameString( false ) ) )
+			if ( Constants.NetworkableTypes.Contains( @interface.ToNameString( false ) ) )
 				return true;
 		}
 
@@ -99,7 +48,7 @@ internal static class ITypeSymbolExtensions
 			var currentType = symbol.BaseType;
 			while ( currentType is not null )
 			{
-				if ( NetworkableTypes.Contains( currentType.ToNameString( false ) ) )
+				if ( Constants.NetworkableTypes.Contains( currentType.ToNameString( false ) ) )
 					return true;
 
 				currentType = currentType.BaseType;
@@ -123,7 +72,7 @@ internal static class ITypeSymbolExtensions
 		if ( symbol.TypeKind == TypeKind.Enum )
 			return true;
 
-		return ServerCommandSupportedTypes.Contains( symbol.ToNameString( false ) );
+		return Constants.ServerCommandSupportedTypes.Contains( symbol.ToNameString( false ) );
 	}
 
 	/// <summary>

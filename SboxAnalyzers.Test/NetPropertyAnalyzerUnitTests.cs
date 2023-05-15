@@ -1,11 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
-using VerifyCS = SboxAnalyzers.Test.CSharpAnalyzerVerifier<SboxAnalyzers.NetPropertyAnalyzer>;
+using VerifyCS = SboxAnalyzers.Test.CSharpAnalyzerVerifier<SboxAnalyzers.Analyzers.NetPropertyAnalyzer>;
 
 namespace SboxAnalyzers.Test;
 
 [TestClass]
-public class NetPropertyAnalyzerUnitTest
+public class NetPropertyAnalyzerUnitTests
 {
 	[TestMethod]
 	public async Task Error_AutoProperties()
