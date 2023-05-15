@@ -5,7 +5,7 @@ using VerifyCS = SboxAnalyzers.Test.CSharpAnalyzerVerifier<SboxAnalyzers.Analyze
 namespace SboxAnalyzers.Test;
 
 [TestClass]
-public class NetPropertyAnalyzerUnitTest
+public class NetPropertyAnalyzerUnitTests
 {
 	[TestMethod]
 	public async Task Error_AutoProperties()

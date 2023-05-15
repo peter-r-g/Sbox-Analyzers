@@ -5,7 +5,7 @@ using VerifyCS = SboxAnalyzers.Test.CSharpAnalyzerVerifier<SboxAnalyzers.Analyze
 namespace SboxAnalyzers.Test;
 
 [TestClass]
-public class MethodArgumentsAnalyzerUnitTest
+public class MethodArgumentsAnalyzerUnitTests
 {
 	[TestMethod]
 	public async Task Error_ParameterCountMismatch()

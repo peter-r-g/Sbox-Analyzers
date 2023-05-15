@@ -5,7 +5,7 @@ using VerifyCS = SboxAnalyzers.Test.CSharpAnalyzerVerifier<SboxAnalyzers.Analyze
 namespace SboxAnalyzers.Test;
 
 [TestClass]
-public class AccessListAnalyzerUnitTest
+public class AccessListAnalyzerUnitTests
 {
 	[TestMethod]
 	public async Task WhitelistNamespace()
