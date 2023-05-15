@@ -23,14 +23,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="AccessListResources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="AccessListResources.resx" />
-    <Compile Update="MethodArgumentsResources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="MethodArgumentsResources.resx" />
-    <Compile Update="NetPropertyResources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="NetPropertyResources.resx" />
-    <Compile Update="ServerCmdResources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="ServerCmdResources.resx" />
-    <EmbeddedResource Update="AccessListResources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="AccessListResources.Designer.cs" />
-    <EmbeddedResource Update="MethodArgumentsResources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="MethodArgumentsResources.Designer.cs" />
-    <EmbeddedResource Update="NetPropertyResources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="NetPropertyResources.Designer.cs" />
-    <EmbeddedResource Update="ServerCmdResources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="ServerCmdResources.Designer.cs" />
+    <Compile Update="Resources\AccessListResources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="AccessListResources.resx" />
+    <Compile Update="Resources\MethodArgumentsResources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="MethodArgumentsResources.resx" />
+    <Compile Update="Resources\NetPropertyResources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="NetPropertyResources.resx" />
+    <Compile Update="Resources\ServerCmdResources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="ServerCmdResources.resx" />
+    <EmbeddedResource Update="Resources\AccessListResources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="AccessListResources.Designer.cs" />
+    <EmbeddedResource Update="Resources\MethodArgumentsResources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="MethodArgumentsResources.Designer.cs" />
+    <EmbeddedResource Update="Resources\NetPropertyResources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="NetPropertyResources.Designer.cs" />
+    <EmbeddedResource Update="Resources\ServerCmdResources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="ServerCmdResources.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Analyzers\" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.CodeAnalysis;
+using SboxAnalyzers.Resources;
 using System.Collections.Immutable;
 
 namespace SboxAnalyzers;
