@@ -68,7 +68,8 @@ public class MethodArgumentsAnalyzer : DiagnosticAnalyzer
 					context.ReportDiagnostic( diagnostic );
 				}
 
-				continue;
+				if ( methodParameters is null )
+					continue;
 			}
 
 			// Check each parameter for type match.
