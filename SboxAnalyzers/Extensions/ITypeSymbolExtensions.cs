@@ -41,6 +41,27 @@ internal static class ITypeSymbolExtensions
 		);
 
 	/// <summary>
+	/// Contains a set of all types that are supported for server commands in S&box.
+	/// </summary>
+	internal static ImmutableHashSet<string> ServerCommandSupportedTypes = ImmutableHashSet.Create(
+		typeof( int ).FullName,
+		typeof( uint ).FullName,
+		typeof( long ).FullName,
+		typeof( ulong ).FullName,
+		typeof( float ).FullName,
+		typeof( double ).FullName,
+		typeof( bool ).FullName,
+		typeof( string ).FullName,
+		"Sandbox.Vector2",
+		"Sandbox.Vector3",
+		"Sandbox.Vector4",
+		"Sandbox.Rotation",
+		"Sandbox.Angles",
+		"Sandbox.Color",
+		"Sandbox.RangedFloat"
+		);
+
+	/// <summary>
 	/// Returns whether or not the <see cref="ITypeSymbol"/> can be networked.
 	/// </summary>
 	/// <param name="symbol">The symbol to check if it is networkable.</param>
@@ -89,6 +110,20 @@ internal static class ITypeSymbolExtensions
 			return symbol.IsUnmanagedType;
 
 		return false;
+	}
+
+	/// <summary>
+	/// Returns whether or not the <see cref="ITypeSymbol"/> is supported in server commands.
+	/// </summary>
+	/// <param name="symbol">The symbol to check if it is networkable in server commands.</param>
+	/// <returns>Whether or not the <see cref="ITypeSymbol"/> is supported in server commands.</returns>
+	internal static bool IsServerCommandSupported( this ITypeSymbol symbol )
+	{
+		// Fast path, enums are supported.
+		if ( symbol.TypeKind == TypeKind.Enum )
+			return true;
+
+		return ServerCommandSupportedTypes.Contains( symbol.ToNameString( false ) );
 	}
 
 	/// <summary>

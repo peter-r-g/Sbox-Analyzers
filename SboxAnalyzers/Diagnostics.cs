@@ -233,4 +233,34 @@ public static class Diagnostics
 			NetworkableRule,
 			AutoPropertyRule );
 	}
+
+	/// <summary>
+	/// Contains information for analyzers relating to server commands.
+	/// </summary>
+	public static class ServerCmd
+	{
+		/// <summary>
+		/// An error diagnostic to notify that a server commands parameter is not supported.
+		/// </summary>
+		public const string UnsupportedId = "SB9012";
+		/// <summary>
+		/// The category that all of the diagnostics fit into.
+		/// </summary>
+		private const string Category = "Commands";
+
+		private static readonly LocalizableString UnsupportedTitle = new LocalizableResourceString( nameof( ServerCmdResources.UnsupportedTitle ), ServerCmdResources.ResourceManager, typeof( ServerCmdResources ) );
+		private static readonly LocalizableString UnsupportedMessageFormat = new LocalizableResourceString( nameof( ServerCmdResources.UnsupportedMessageFormat ), ServerCmdResources.ResourceManager, typeof( ServerCmdResources ) );
+		private static readonly LocalizableString UnsupportedDescription = new LocalizableResourceString( nameof( ServerCmdResources.UnsupportedDescription ), ServerCmdResources.ResourceManager, typeof( ServerCmdResources ) );
+		internal static readonly DiagnosticDescriptor UnsupportedRule = new(
+			UnsupportedId,
+			UnsupportedTitle,
+			UnsupportedMessageFormat,
+			Category,
+			DiagnosticSeverity.Error,
+			isEnabledByDefault: true,
+			description: UnsupportedDescription );
+
+		internal static readonly ImmutableArray<DiagnosticDescriptor> AllRules = ImmutableArray.Create(
+			UnsupportedRule );
+	}
 }
