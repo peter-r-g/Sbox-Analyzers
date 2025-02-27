@@ -61,7 +61,7 @@ namespace SboxAnalyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The symbol is not whitelisted..
+        ///   Looks up a localized string similar to The symbol is not whitelisted.
         /// </summary>
         internal static string AnalyzerDescription {
             get {

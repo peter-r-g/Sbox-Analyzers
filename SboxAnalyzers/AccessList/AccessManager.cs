@@ -11,27 +11,6 @@ namespace SboxAnalyzers;
 internal class AccessManager
 {
 	/// <summary>
-	/// The current configuration that the <see cref="AccessRules"/> are using.
-	/// </summary>
-	internal static string Config
-	{
-		get => config;
-		set
-		{
-			if ( config == value )
-				return;
-
-			config = value;
-			Rules = new AccessRules( config );
-			WhitelistCache.Clear();
-		}
-	}
-	/// <summary>
-	/// See <see cref="Config"/>.
-	/// </summary>
-	private static string config = "unknown";
-
-	/// <summary>
 	/// An <see cref="ImmutableArray{string}"/> containing all of the assemblies that types could also be resolved from.
 	/// </summary>
 	internal static ImmutableArray<string> AlternateAssemblies { get; } = ImmutableArray.Create(
@@ -51,7 +30,7 @@ internal class AccessManager
 	/// <summary>
 	/// The <see cref="AccessRules"/> instance.
 	/// </summary>
-	private static AccessRules Rules { get; set; } = new AccessRules( config );
+	private static AccessRules Rules { get; set; } = new AccessRules();
 	/// <summary>
 	/// A thread-safe dictionary containing a cache of all checked symbols and their whitelist result.
 	/// </summary>

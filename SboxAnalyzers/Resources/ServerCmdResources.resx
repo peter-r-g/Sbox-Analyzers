@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="UnsupportedDescription" xml:space="preserve">
-    <value>Not all types can be used in S&amp;box server commands. See https://wiki.facepunch.com/sbox/Commands#parametertypes for currently usable types.</value>
+    <value>Not all types can be used in S&amp;box server commands. See https://wiki.facepunch.com/sbox/Commands#parametertypes for currently usable types</value>
     <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
   <data name="UnsupportedMessageFormat" xml:space="preserve">

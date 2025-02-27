@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AutoPropertyDescription" xml:space="preserve">
-    <value>Networked properties must be implemented as an auto property for them to function. Init setters do not count.</value>
+    <value>Networked properties must be implemented as an auto property for them to function. Init setters do not count</value>
     <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
   <data name="AutoPropertyMessageFormat" xml:space="preserve">
@@ -130,7 +130,7 @@
     <comment>The title of the diagnostic.</comment>
   </data>
   <data name="ChangeMissingDescription" xml:space="preserve">
-    <value>The change callback method must exist on the type as the name is defined or defaulted to. If default, it will look for "On[PropertyName]Changed".</value>
+    <value>The change callback method must exist on the type as the name is defined or defaulted to. If default, it will look for "On[PropertyName]Changed"</value>
     <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
   <data name="ChangeMissingMessageFormat" xml:space="preserve">
@@ -142,7 +142,7 @@
     <comment>The title of the diagnostic.</comment>
   </data>
   <data name="ChangeParameterCountDescription" xml:space="preserve">
-    <value>The change callback must have two parameters. The first containing the old value; the second containing the new value.</value>
+    <value>The change callback must have two parameters. The first containing the old value; the second containing the new value</value>
     <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
   <data name="ChangeParameterCountMessageFormat" xml:space="preserve">
@@ -154,7 +154,7 @@
     <comment>The title of the diagnostic.</comment>
   </data>
   <data name="ChangeParameterTypeDescription" xml:space="preserve">
-    <value>The change callback method must have the parameter types be the same as the properties type.</value>
+    <value>The change callback method must have the parameter types be the same as the properties type</value>
     <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
   <data name="ChangeParameterTypeMessageFormat" xml:space="preserve">
@@ -166,7 +166,7 @@
     <comment>The title of the diagnostic.</comment>
   </data>
   <data name="LocalDescription" xml:space="preserve">
-    <value>The local attribute is currently not implemented. See issue #2169 for updates.</value>
+    <value>The local attribute is currently not implemented. See issue #2169 for updates</value>
     <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
   <data name="LocalMessageFormat" xml:space="preserve">
@@ -178,7 +178,7 @@
     <comment>The title of the diagnostic.</comment>
   </data>
   <data name="NetworkableDescription" xml:space="preserve">
-    <value>Not all types can be networked in S&amp;box. See https://wiki.facepunch.com/sbox/Networked_Types for currently networkable types.</value>
+    <value>Not all types can be networked in S&amp;box. See https://wiki.facepunch.com/sbox/Networked_Types for currently networkable types</value>
     <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
   <data name="NetworkableMessageFormat" xml:space="preserve">
@@ -190,7 +190,7 @@
     <comment>The title of the diagnostic.</comment>
   </data>
   <data name="StaticDescription" xml:space="preserve">
-    <value>Static properties cannot be networked.</value>
+    <value>Static properties cannot be networked</value>
     <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
   <data name="StaticMessageFormat" xml:space="preserve">

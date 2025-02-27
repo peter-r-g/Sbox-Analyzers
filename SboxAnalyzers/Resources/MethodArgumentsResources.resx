@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ListenerMethodArgumentsUndefinedDescription" xml:space="preserve">
-    <value>Events can define the amount and types of parameters that are sent to listeners. If this is not defined then it can become difficult to see what is meant to be passed and received.</value>
+    <value>Events can define the amount and types of parameters that are sent to listeners. If this is not defined then it can become difficult to see what is meant to be passed and received</value>
     <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
   <data name="ListenerMethodArgumentsUndefinedMessageFormat" xml:space="preserve">
@@ -130,7 +130,7 @@
     <comment>The title of the diagnostic.</comment>
   </data>
   <data name="ListenerParameterCountMismatchDescription" xml:space="preserve">
-    <value>Events can define the amount of parameters that are sent to listeners.</value>
+    <value>Events can define the amount of parameters that are sent to listeners</value>
     <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
   <data name="ListenerParameterCountMismatchMessageFormat" xml:space="preserve">
@@ -142,7 +142,7 @@
     <comment>The title of the diagnostic.</comment>
   </data>
   <data name="ListenerParameterTypeMismatchDescription" xml:space="preserve">
-    <value>Events can define the types of parameters that are sent to listeners.</value>
+    <value>Events can define the types of parameters that are sent to listeners</value>
     <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
   <data name="ListenerParameterTypeMismatchMessageFormat" xml:space="preserve">

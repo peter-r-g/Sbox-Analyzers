@@ -44,14 +44,6 @@ public class AccessListAnalyzer : DiagnosticAnalyzer
 		// Clear any old diagnostics from a previous compile.
 		while ( !ReportedDiagnostics.IsEmpty )
 			ReportedDiagnostics.TryTake( out _ );
-
-		var thisAssembly = context.Compilation.Assembly;
-
-		// Setup access manager for new compilation.
-		if ( thisAssembly.Name == "Menu Addon" )
-			AccessManager.Config = "menu";
-		else
-			AccessManager.Config = "unknown";
 	}
 
 	/// <summary>

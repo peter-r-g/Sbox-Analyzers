@@ -61,7 +61,7 @@ namespace SboxAnalyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Not all types can be used in S&amp;box server commands. See https://wiki.facepunch.com/sbox/Commands#parametertypes for currently usable types..
+        ///   Looks up a localized string similar to Not all types can be used in S&amp;box server commands. See https://wiki.facepunch.com/sbox/Commands#parametertypes for currently usable types.
         /// </summary>
         internal static string UnsupportedDescription {
             get {

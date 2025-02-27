@@ -61,7 +61,7 @@ namespace SboxAnalyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For S&amp;box replication to function for types derived from BaseNetworkable; They must implement a parameterless constructor..
+        ///   Looks up a localized string similar to For S&amp;box replication to function for types derived from BaseNetworkable; They must implement a parameterless constructor.
         /// </summary>
         internal static string NoParameterlessConstructorDescription {
             get {

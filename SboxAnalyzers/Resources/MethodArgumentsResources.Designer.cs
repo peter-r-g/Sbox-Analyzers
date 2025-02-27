@@ -61,7 +61,7 @@ namespace SboxAnalyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Events can define the amount and types of parameters that are sent to listeners. If this is not defined then it can become difficult to see what is meant to be passed and received..
+        ///   Looks up a localized string similar to Events can define the amount and types of parameters that are sent to listeners. If this is not defined then it can become difficult to see what is meant to be passed and received.
         /// </summary>
         internal static string ListenerMethodArgumentsUndefinedDescription {
             get {
@@ -88,7 +88,7 @@ namespace SboxAnalyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Events can define the amount of parameters that are sent to listeners..
+        ///   Looks up a localized string similar to Events can define the amount of parameters that are sent to listeners.
         /// </summary>
         internal static string ListenerParameterCountMismatchDescription {
             get {
@@ -115,7 +115,7 @@ namespace SboxAnalyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Events can define the types of parameters that are sent to listeners..
+        ///   Looks up a localized string similar to Events can define the types of parameters that are sent to listeners.
         /// </summary>
         internal static string ListenerParameterTypeMismatchDescription {
             get {

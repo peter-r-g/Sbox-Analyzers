@@ -61,7 +61,7 @@ namespace SboxAnalyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Networked properties must be implemented as an auto property for them to function. Init setters do not count..
+        ///   Looks up a localized string similar to Networked properties must be implemented as an auto property for them to function. Init setters do not count.
         /// </summary>
         internal static string AutoPropertyDescription {
             get {
@@ -88,7 +88,7 @@ namespace SboxAnalyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The change callback method must exist on the type as the name is defined or defaulted to. If default, it will look for &quot;On[PropertyName]Changed&quot;..
+        ///   Looks up a localized string similar to The change callback method must exist on the type as the name is defined or defaulted to. If default, it will look for &quot;On[PropertyName]Changed&quot;.
         /// </summary>
         internal static string ChangeMissingDescription {
             get {
@@ -115,7 +115,7 @@ namespace SboxAnalyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The change callback must have two parameters. The first containing the old value; the second containing the new value..
+        ///   Looks up a localized string similar to The change callback must have two parameters. The first containing the old value; the second containing the new value.
         /// </summary>
         internal static string ChangeParameterCountDescription {
             get {
@@ -142,7 +142,7 @@ namespace SboxAnalyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The change callback method must have the parameter types be the same as the properties type..
+        ///   Looks up a localized string similar to The change callback method must have the parameter types be the same as the properties type.
         /// </summary>
         internal static string ChangeParameterTypeDescription {
             get {
@@ -169,7 +169,7 @@ namespace SboxAnalyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The local attribute is currently not implemented. See issue #2169 for updates..
+        ///   Looks up a localized string similar to The local attribute is currently not implemented. See issue #2169 for updates.
         /// </summary>
         internal static string LocalDescription {
             get {
@@ -196,7 +196,7 @@ namespace SboxAnalyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Not all types can be networked in S&amp;box. See https://wiki.facepunch.com/sbox/Networked_Types for currently networkable types..
+        ///   Looks up a localized string similar to Not all types can be networked in S&amp;box. See https://wiki.facepunch.com/sbox/Networked_Types for currently networkable types.
         /// </summary>
         internal static string NetworkableDescription {
             get {
@@ -223,7 +223,7 @@ namespace SboxAnalyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Static properties cannot be networked..
+        ///   Looks up a localized string similar to Static properties cannot be networked.
         /// </summary>
         internal static string StaticDescription {
             get {
